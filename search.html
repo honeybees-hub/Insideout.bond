@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inbondz Search Tools</title>
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <!-- Load Lucide Icons for Search, Sun, Moon, Plus -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+   
+    <style>
+        /* -------------------------------------------------------------------
+           CSS VARIABLES (For easy light/dark mode switching)
+           ------------------------------------------------------------------- */
+        :root {
+            --color-bg: #ffffff;
+            --color-text: #1f2937; /* Gray 900 */
+            --color-text-muted: #4b5563; /* Gray 600 */
+            --color-header-bg: rgba(255, 255, 255, 1); /* Solid white */
+            --color-border: #e5e7eb; /* Gray 200 */
+            --color-input-bg: #f3f4f6; /* Gray 100 */
+            --color-input-text: #1f2937;
+            --color-icon: #9ca3af; /* Gray 400 */
+            --color-primary: #0891b2; /* Cyan 600 */
+            --color-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            --gradient-start: #1d4ed8; /* Blue 700 */
+            --gradient-end: #0891b2; /* Cyan 600 */
+        }
+
+        .dark-mode {
+            --color-bg: #000000;
+            --color-text: #f9fafb; /* Gray 50 */
+            --color-text-muted: #6b7280; /* Gray 500 */
+            --color-header-bg: rgba(0, 0, 0, 0.7); /* Black with opacity/blur */
+            --color-border: #1f2937; /* Gray 800 */
+            --color-input-bg: #1f2937; /* Gray 800 */
+            --color-input-text: #f9fafb;
+            --color-icon: #6b7280; /* Gray 500 */
+            --color-primary: #22d3ee; /* Cyan 400 */
+            --color-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+            --gradient-start: #60a5fa; /* Blue 400 */
+            --gradient-end: #22d3ee; /* Cyan 400 */
+        }
+        
+        /* -------------------------------------------------------------------
+           BASE STYLES
+           ------------------------------------------------------------------- */
+        body {
+            font-family: ui-sans-serif, system-ui, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            transition: background-color 0.5s, color 0.5s;
+            /* FIX: Ensure no horizontal scrolling (mobile responsiveness) */
+            overflow-x: hidden; 
+        }
+
+        .container {
+            max-width: 1280px; /* Equivalent to max-w-7xl */
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            width: 100%;
+        }
+
+        /* -------------------------------------------------------------------
+           HEADER
+           ------------------------------------------------------------------- */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background-color: var(--color-header-bg);
+            border-bottom: 1px solid var(--color-border);
+            padding: 1rem;
+            box-shadow: var(--color-shadow);
+            backdrop-filter: blur(8px);
+            transition: background-color 0.5s, border-color 0.5s, box-shadow 0.5s;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem; /* xl */
+            font-weight: 700; /* bold */
+        }
+
+        .mode-toggle-btn {
+            padding: 0.5rem;
+            border-radius: 9999px; /* full */
+            color: var(--color-text-muted);
+            border: 1px solid transparent;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .mode-toggle-btn:hover {
+            background-color: var(--color-input-bg);
+            border-color: var(--color-border);
+        }
+
+        /* -------------------------------------------------------------------
+           MAIN CONTENT
+           ------------------------------------------------------------------- */
+        main {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            z-index: 1;
+        }
+        
+        .main-content {
+            text-align: center;
+            width: 100%;
+            max-width: 64rem; /* max-w-3xl */
+            margin-top: -3rem; /* Adjust positioning */
+            padding-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 3rem; /* 5xl */
+            font-weight: 800; /* extrabold */
+            line-height: 1.1;
+            letter-spacing: -0.025em;
+        }
+        @media (min-width: 640px) { /* sm: */
+            h1 { font-size: 3.75rem; } /* 6xl */
+        }
+        @media (min-width: 1024px) { /* lg: */
+            h1 { font-size: 4.5rem; } /* 7xl */
+        }
+
+        h2 {
+            font-size: 2.25rem; /* 4xl */
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.025em;
+            padding-top: 1rem;
+            margin-bottom: 2.5rem;
+        }
+        @media (min-width: 640px) { /* sm: */
+            h2 { font-size: 3rem; } /* 5xl */
+        }
+        @media (min-width: 1024px) { /* lg: */
+            h2 { font-size: 3.75rem; } /* 6xl */
+        }
+
+        .lead-text {
+            font-size: 1.125rem; /* lg */
+            color: var(--color-text-muted);
+            max-width: 42rem; /* max-w-xl */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Animated Text Gradient */
+        .animated-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-image: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+        }
+
+        /* Typing Cursor */
+        @keyframes pulse-cursor {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        .typing-cursor {
+            display: inline-block;
+            margin-left: 0.25rem;
+            width: 0.125rem;
+            height: 1.15em;
+            background-color: var(--color-text); /* Black cursor in light mode */
+            vertical-align: top;
+            animation: pulse-cursor 0.7s infinite;
+        }
+        .dark-mode .typing-cursor {
+            background-color: #ffffff; /* White cursor in dark mode */
+        }
+
+        /* -------------------------------------------------------------------
+           SEARCH INPUT
+           ------------------------------------------------------------------- */
+        .search-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+        
+        .search-container {
+            width: 100%;
+            /* ADJUSTED: Reduced max-width for a smaller, sleeker look */
+            max-width: 32rem; 
+            display: flex;
+            flex-direction: column;
+            gap: 1rem; 
+            padding: 0.5rem;
+            background-color: var(--color-bg);
+            border-radius: 1rem; /* rounded-2xl */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
+            border: 1px solid var(--color-border);
+            transition: all 0.5s;
+        }
+        @media (min-width: 640px) { /* sm: */
+            .search-container {
+                flex-direction: row;
+                gap: 0.5rem; 
+            }
+        }
+
+        .search-input-wrapper {
+            position: relative;
+            flex-grow: 1;
+            width: 100%; 
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1.25rem;
+            height: 1.25rem;
+            color: var(--color-icon);
+        }
+
+        .search-input {
+            width: 100%;
+            /* Adjusted padding for smaller look */
+            padding: 0.75rem 1rem 0.75rem 3rem; 
+            border: none;
+            border-radius: 0.75rem; /* rounded-xl */
+            background-color: var(--color-input-bg);
+            color: var(--color-input-text);
+            transition: all 0.3s;
+            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06); /* shadow-inner */
+            box-sizing: border-box; 
+        }
+        .search-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px var(--color-primary), inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+            background-color: var(--color-bg);
+        }
+
+        .search-button {
+            width: 100%; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* Adjusted padding for smaller look */
+            padding: 0.625rem 1.5rem; 
+            background-color: var(--color-primary);
+            color: #ffffff;
+            font-weight: 600;
+            border-radius: 0.75rem;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 6px -1px rgba(8, 145, 178, 0.5), 0 2px 4px -2px rgba(8, 145, 178, 0.3);
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        /* Override button width for desktop layout */
+        @media (min-width: 640px) { /* sm: */
+            .search-button {
+                width: auto;
+            }
+        }
+
+        .search-button:hover {
+            background-color: #06809c; /* Darker cyan */
+            transform: scale(1.01);
+        }
+        .search-button:active {
+            transform: scale(0.98);
+        }
+        
+        .dark-mode .search-button {
+            background-color: #ffffff;
+            /* FIXED: Explicitly setting black/dark text color for contrast on white button in dark mode */
+            color: #1f2937; 
+            box-shadow: 0 4px 6px -1px rgba(255, 255, 255, 0.3), 0 2px 4px -2px rgba(255, 255, 255, 0.1);
+        }
+        .dark-mode .search-button:hover {
+            background-color: #e5e7eb;
+        }
+
+        .message-text {
+            font-size: 0.875rem; /* sm */
+            padding-top: 1rem;
+            color: var(--color-primary);
+            font-weight: 500;
+        }
+
+        /* -------------------------------------------------------------------
+           FOOTER
+           ------------------------------------------------------------------- */
+        footer {
+            padding: 1rem;
+            text-align: center;
+            color: var(--color-text-muted);
+            border-top: 1px solid var(--color-border);
+            z-index: 1;
+            transition: all 0.5s;
+        }
+        .footer a {
+            color: var(--color-primary);
+            font-weight: 500;
+            margin-left: 0.25rem;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .pipe-separator {
+            margin: 0 0.5rem;
+        }
+
+        /* -------------------------------------------------------------------
+           DARK MODE SPECIFIC STYLES (Background Glow)
+           ------------------------------------------------------------------- */
+        .dark-mode-bg {
+            position: absolute;
+            inset: 0;
+            z-index: -10;
+            display: none; /* Hidden by default in light mode */
+        }
+        
+        .dark-mode .dark-mode-bg {
+            display: block; /* Visible only in dark mode */
+        }
+
+        .dark-mode-bg-top {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            opacity: 0.4;
+            background-image: radial-gradient(at 50% 10%, #0c4a6e 0%, transparent 60%);
+        }
+        .dark-mode-bg-bottom {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            opacity: 0.2;
+            background-image: radial-gradient(at 50% 90%, #1f2937 0%, transparent 80%);
+        }
+
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <!-- Dark Mode Background Layer: Only visible if the body has the .dark-mode class -->
+    <div id="dark-mode-bg" class="dark-mode-bg">
+        <div class="dark-mode-bg-top"></div>
+        <div class="dark-mode-bg-bottom"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <span class="logo" style="color: #9ca3af;">Inbondz</span>
+            <button
+                id="mode-toggle"
+                class="mode-toggle-btn"
+                title="Switch Mode"
+            >
+                <!-- Icons rendered by Lucide JS. Moon visible by default (to switch to dark mode) -->
+                <i data-lucide="sun" id="sun-icon" style="width: 24px; height: 24px; display: none;"></i>
+                <i data-lucide="moon" id="moon-icon" style="width: 24px; height: 24px;"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="main-content">
+            
+            <!-- Main Heading -->
+            <h1>
+                Search Tools
+            </h1>
+            
+            <!-- Animated Text Section -->
+            <h2>
+                <span id="animated-text" class="animated-text"></span>
+                <span id="cursor" class="typing-cursor"></span>
+            </h2>
+
+            <p class="lead-text">
+                Quickly find the tool you need and get to work instantly.
+            </p>
+
+            <!-- Search Input and Button -->
+            <div class="search-wrapper">
+                <div class="search-container">
+                    <div class="search-input-wrapper">
+                        <!-- Search Icon (Rendered by Lucide) -->
+                        <i data-lucide="search" class="search-icon"></i>
+                        <input
+                            type="text"
+                            id="search-input"
+                            placeholder="Enter a tool name ..."
+                            class="search-input"
+                            id="search-input"
+                        />
+                    </div>
+                    <button
+                        id="search-button"
+                        class="search-button"
+                    >
+                        <!-- Plus Icon (Rendered by Lucide) -->
+                        <i data-lucide="plus" style="width: 20px; height: 20px; margin-right: 0.5rem;"></i>
+                        Search Tool
+                    </button>
+                </div>
+            </div>
+
+            <p id="message" class="message-text"></p>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="text-sm"> 
+            Design by &copy; <a href="index.html">Inbondz</a>
+            <span class="pipe-separator">|</span> 
+            Created by
+            <a 
+                href="https://instagram.com/itz_h_square" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+            >
+                itz_h_square
+            </a>
+        </p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // ----------------------------------------------------
+            // 1. Core Variables and Setup
+            // ----------------------------------------------------
+            // Initialize Lucide icons
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+
+            // DOM Elements
+            const bodyElement = document.body;
+            const toggleButton = document.getElementById('mode-toggle');
+            const sunIcon = document.getElementById('sun-icon');
+            const moonIcon = document.getElementById('moon-icon');
+            const searchInput = document.getElementById('search-input');
+            const searchButton = document.getElementById('search-button');
+            const messageElement = document.getElementById('message');
+            const darkBg = document.getElementById('dark-mode-bg');
+
+
+            // ----------------------------------------------------
+            // 2. Dark Mode / Light Mode Toggle Logic
+            // ----------------------------------------------------
+            let isDarkMode = false; // Light mode is default
+
+            const updateMode = (isDark) => {
+                if (isDark) {
+                    bodyElement.classList.add('dark-mode');
+                    sunIcon.style.display = 'block';
+                    moonIcon.style.display = 'none';
+                    darkBg.style.display = 'block'; // Show dark background layers
+                    toggleButton.title = 'Switch to Light Mode';
+                } else {
+                    bodyElement.classList.remove('dark-mode');
+                    sunIcon.style.display = 'none';
+                    moonIcon.style.display = 'block';
+                    darkBg.style.display = 'none'; // Hide dark background layers
+                    toggleButton.title = 'Switch to Dark Mode';
+                }
+            };
+
+            toggleButton.addEventListener('click', () => {
+                isDarkMode = !isDarkMode;
+                updateMode(isDarkMode);
+            });
+
+            // Initial setup to ensure the page starts in light mode (isDarkMode = false)
+            updateMode(isDarkMode);
+
+
+            // ----------------------------------------------------
+            // 3. Animated Text Logic
+            // ----------------------------------------------------
+            const DYNAMIC_WORDS = ['Calculetor', 'BG Remover', 'Image Compressor', 'Chayan Chor' ,'Sayan Beta','Ponde Marbo Jheta'];
+            const animatedTextElement = document.getElementById('animated-text');
+            
+            let wordIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            let speed = 150;
+
+            function typeWriter() {
+                const currentWord = DYNAMIC_WORDS[wordIndex % DYNAMIC_WORDS.length];
+
+                if (isDeleting) {
+                    charIndex--;
+                    speed = 75; // Faster deletion
+                } else {
+                    charIndex++;
+                    speed = 150; // Slower typing
+                }
+
+                animatedTextElement.textContent = currentWord.substring(0, charIndex);
+
+                if (!isDeleting && charIndex === currentWord.length) {
+                    speed = 1500; // Pause duration
+                    isDeleting = true;
+                } else if (isDeleting && charIndex === 0) {
+                    speed = 500; // Pause before next word
+                    isDeleting = false;
+                    wordIndex++;
+                }
+
+                setTimeout(typeWriter, speed);
+            }
+
+            // Start the typewriter animation
+            typeWriter();
+
+
+            // ----------------------------------------------------
+            // 4. Search Button Logic
+            // ----------------------------------------------------
+            
+            // const handleSearch = () => {
+            //     const searchTerm = searchInput.value.trim();
+            //     if (searchTerm !== '') {
+            //         messageElement.textContent = `Standard search executed for: "${searchTerm}". Tool functionality is not implemented.`;
+            //     } else {
+            //         messageElement.textContent = "Please enter a tool name to search.";
+            //     }
+            // };
+
+            // searchButton.addEventListener('click', handleSearch);
+
+            // searchInput.addEventListener('keydown', (e) => {
+            //     if (e.key === 'Enter') {
+            //         handleSearch();
+            //     }
+            // });
+        });
+    </script>
+    <script type="module" src="server.js"></script>
+</body>
+</html>
