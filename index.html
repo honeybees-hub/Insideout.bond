@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inbondz Tools</title>
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <script src="https://unpkg.com/lucide@latest/dist/lucide.min.js"></script>
+
+
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Mobile-only indicator styles (simple white background, black text, with gap) -->
+    <style>
+        .mobile-only{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:16px;
+            background:#ffffff;
+            color:#000000;
+            text-align:center;
+            padding:10px 14px;
+            font-weight:600;
+            flex-wrap:wrap;
+        }
+        .mobile-only a{
+            color:#000000;
+            text-decoration:none;
+            padding:6px 8px;
+            font-size:0.95rem;
+        }
+        .mobile-only a:hover{ text-decoration:underline }
+        @media(min-width:768px){
+            .mobile-only{display:none}
+        }
+    </style>
+</head>
+
+<body class="min-h-screen antialiased">
+
+    <!-- Header / Navigation Bar (Simplified and Logo Color Changed) -->
+    <header class="sticky top-0 z-50 bg-primary-bg/95 backdrop-blur-sm shadow-md border-b border-border-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo: "Inbondz" in #9EA3A3 -->
+                <div class="flex-shrink-0" style="color: #9EA3A3">
+                    <a href="#" class="text-2xl font-bold text-logo-gray">Inbondz</a>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#products"
+                        class="text-text-dark hover:text-cta-blue transition duration-150 font-medium">Tools</a>
+                    <a href="#solutions"
+                        class="text-text-dark hover:text-cta-blue transition duration-150 font-medium">Developer's
+                        Tools</a>
+                    <a href="#pricing"
+                        class="text-text-dark hover:text-cta-blue transition duration-150 font-medium">Games </a>
+                    <a href="search.html"
+                        class="text-text-dark hover:text-cta-blue transition duration-150 font-medium">Search Tools</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile-only indicator -->
+    <div id="mobile-indicator" class="mobile-only" role="status" aria-hidden="false" >
+        <a href="#products" class="text-text-dark hover:text-cta-blue transition duration-150 font-medium">Tools</a>
+        <a href="#solutions" class="text-text-dark hover:text-cta-blue transition duration-150 font-medium">Dev's
+            Tools</a>
+        <a href="#pricing" class="text-text-dark hover:text-cta-blue transition duration-150 font-medium">Games </a>
+        <!-- <a href="#support" class="text-text-dark hover:text-cta-blue transition duration-150 font-medium">Search
+            Tools</a> -->
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="py-16 md:py-24 text-center bg-primary-bg">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 class="text-4xl sm:text-6xl font-extrabold leading-tight tracking-tighter text-text-dark">
+                    The Next Evolution of Digital Tools
+                </h1>
+                <p class="mt-4 text-lg sm:text-xl text-text-muted-dark max-w-2xl mx-auto" style="color: green;">
+                    Search Tools in Our Search Engine to Get Best Tools
+                </p>
+                <div class="mt-8 flex justify-center space-x-4">
+
+                    <!-- <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-semibold rounded-lg shadow-xl text-white bg-cta-blue hover:bg-cyan-700 transition duration-300 transform hover:scale-105">
+                        Get Started - Free
+                    </a> -->
+                    <a href="search.html"
+                        class="inline-flex items-center px-6 py-3 border border-border-light text-base font-semibold rounded-lg text-text-dark hover:bg-secondary-bg transition duration-300"
+                        style="color: white; background-color:  #055e6c;">
+                        Explore Tools
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Features Section (Icons and Border Colors Updated) -->
+        <section id="products" class="py-16 bg-secondary-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-12 text-text-dark">Our Comprehensive Inbondz's Tools</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                    <!-- Feature 1: Payment Gateway (Animated) -->
+                    <div class="bg-primary-bg p-6 rounded-xl shadow-lg border border-border-light hover:border-cta-blue transition duration-300 transform hover:scale-[1.02] hover:shadow-xl cursor-pointer"
+                        style="background-color: #3a3a3a; color: #fff;">
+                        <!-- Icon Color Updated -->
+                        <div
+                            class="flex items-center justify-center w-12 h-12 rounded-full bg-cta-blue/20 text-cta-blue mb-4">
+                            <i data-lucide="zap" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-text-dark" style="color: yellow;">Screen Recoder</h3>
+                        <p class="text-text-muted-dark text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit. Dolor distinctio nisi voluptatem quia nesciunt eius sint atque hic!</p>
+                    </div>
+
+                    <!-- Feature 2: Payroll & Payouts (Animated) -->
+                    <div class="bg-primary-bg p-6 rounded-xl shadow-lg border border-border-light hover:border-cta-blue transition duration-300 transform hover:scale-[1.02] hover:shadow-xl cursor-pointer"
+                        style="background-color: #3a3a3a; color: #fff;">
+                        <!-- Icon Color Updated -->
+                        <div
+                            class="flex items-center justify-center w-12 h-12 rounded-full bg-cta-blue/20 text-cta-blue mb-4">
+                            <i data-lucide="send" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-text-dark" style="color: yellow;">Thumbnail
+                            Downloader</h3>
+                        <p class="text-text-muted-dark text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Voluptatum exercitationem optio debitis hic et eos neque fugiat ab!</p>
+                    </div>
+
+                    <!-- Feature 3: Business Banking (Animated) -->
+                    <div class="bg-primary-bg p-6 rounded-xl shadow-lg border border-border-light hover:border-cta-blue transition duration-300 transform hover:scale-[1.02] hover:shadow-xl cursor-pointer"
+                        style="background-color: #3a3a3a; color: #fff;">
+                        <!-- Icon Color Updated -->
+                        <div
+                            class="flex items-center justify-center w-12 h-12 rounded-full bg-cta-blue/20 text-cta-blue mb-4">
+                            <i data-lucide="banknote" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-text-dark" style="color: yellow;">Text Styler </h3>
+                        <p class="text-text-muted-dark text-sm">Lorem ipsum, dolor sit amet consectetur adipisicing
+                            elit. Quidem quaerat pariatur corporis in laudantium suscipit officiis t.</p>
+                    </div>
+                </div>
+
+                <!-- Stats/Trust Section (Numbers Color Updated) -->
+                <div class="mt-16 pt-10 border-t border-border-light">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                        <div>
+                            <p class="text-3xl font-bold text-cta-blue">100+</p>
+                            <p class="text-sm text-text-muted-dark mt-1">Tools</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-bold text-cta-blue">50+ </p>
+                            <p class="text-sm text-text-muted-dark mt-1"> Tools Use weekly</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-bold text-cta-blue">1+</p>
+                            <p class="text-sm text-text-muted-dark mt-1">Tool Add Everyweek</p>
+                        </div>
+                        <div>
+                            <p class="text-3xl font-bold text-cta-blue">24/7</p>
+                            <p class="text-sm text-text-muted-dark mt-1">Available </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solutions Section (Checkmark and Button Colors Updated) -->
+        <section id="solutions" class="py-16 bg-primary-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="md:flex md:items-center md:justify-between space-y-8 md:space-y-0">
+                    <div class="md:w-1/2">
+                        <h2 class="text-4xl font-extrabold text-text-dark">Tools for Developers</h2>
+                        <p class="mt-4 text-text-muted-dark">Our Tools are simple, powerful, and well-documented. Spend
+                            less, time integrating.</p>
+                        <ul class="mt-6 space-y-3 text-text-dark">
+                            <li class="flex items-center">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-cta-blue mr-2"></i>
+                                Instant Reasult
+                            </li>
+
+                            <li class="flex items-center">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-cta-blue mr-2"></i>
+                                Ready-to-use
+                            </li>
+                        </ul>
+                        <!-- Secondary Button (Updated Color: cta-blue) -->
+                        <a href="#"
+                            class="mt-8 inline-flex items-center px-6 py-3 border border-cta-blue text-base font-semibold rounded-lg text-cta-blue hover:bg-cta-blue hover:text-white transition duration-300"
+                            style="background-color: #055e6c; color: #fff;">
+                            View Dev Tools <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                        </a>
+                    </div>
+                    <!-- Mock Code/Dashboard Image Placeholder -->
+                    <div class="md:w-1/2 md:pl-12" style="color: #9EA3A3;">
+                        <div class="bg-gray-100 p-6 rounded-xl shadow-lg border border-border-light">
+                            <div class="h-64 flex items-center justify-center">
+                                <p class="text-text-muted-dark italic">
+                                    hi i am here
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+    </main>
+
+    <!-- Footer (Logo and Link Hover Colors Updated) -->
+    <footer class="bg-text-dark pt-12 pb-8  " style="border-top: 2px solid #9EA3A3;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <!-- Col 1: Logo & Mission ("Inbondz" and color updated) -->
+                <div>
+                    <a href="#" class="text-xl font-bold text-logo-gray" style="color: #9EA3A3;">Inbondz</a>
+                    <p class="mt-2 text-sm text-gray-400">The future of Tools  is here.</p>
+                </div>
+
+                <!-- Col 2: Products -->
+                <div>
+                    
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-cta-blue">Contact</a></li>
+                        <li><a href="#" class="hover:text-cta-blue">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-cta-blue">T&C</a></li>
+                        <li><a href="https://instagram.com/itz_h_square" class="hover:text-cta-blue">itz_h_square</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Company -->
+                <!-- <div>
+                    
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-cta-blue">About Us</a></li>
+                        <li><a href="#" class="hover:text-cta-blue">Careers</a></li>
+                        <li><a href="#" class="hover:text-cta-blue">Press</a></li>
+                        <li><a href="#" class="hover:text-cta-blue">Security</a></li>
+                    </ul>
+                </div> -->
+
+                <!-- Col 4: Support -->
+                <!-- <div>
+                    <h4 class="text-lg font-semibold mb-3 text-white">Support</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-cta-blue">Contact Support</a></li>
+                        <li><a href="#" class="hover:text-cta-blue">FAQ</a></li>
+                        <li><a href="#" class="hover:text-cta-blue">API Status</a></li>
+                        <li><a href="#" class="hover:text-cta-blue">Documentation</a></li>
+                    </ul>
+                </div> -->
+            </div>
+
+            <div class="mt-10 border-t border-gray-700 pt-6 text-center text-sm text-gray-400">
+                &copy; Inbondz Tools. | All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
