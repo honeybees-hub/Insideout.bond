@@ -25,11 +25,7 @@ function searchNews() {
             }
 
 
-            if (found) {
-
-                window.location.href = `https://news.google.com/${matchedItem.news}`;
-
-            }else if (searchText === " qr code generator " ," qr ", " qr code "){
+             if (searchText === " qr code generator " ," qr ", " qr code "){
                 
                 window.location.href = `https://qrgenerator.inbondz.com`;
 
