@@ -32,25 +32,19 @@ function searchNews() {
             }else if (searchText === 'tic','tac','toe','tictactoe'){
                 
                 window.location.href = 'https://tictactoe.inbondz.com'
-            }
             }else if (searchText === 'thumbnailextractor','thumbnail','youtubethumbnaildownloader','youtubethumbnail','thumbnaildownloader','ytthumbnaile','ytthumbnailedownloader'){
                
                 window.location.href = 'https://ytthumbnailextractor.inbondz.com'
-            }
             }else if (searchText === 'imageenhancer','photoenhancer'){
                 
                 window.location.href = 'https://imageenhancer.inbondz.com'
-            }
             }else if (searchText === 'fontgenerator','textstyler'){
                 
                 window.location.href = 'https://fontgenerator.inbondz.com'
-            }
             }else if (searchText === 'jsonformatter','json'){
                
                 window.location.href = 'https://jsonformatter.inbondz.com/'
-            }
-            
-            else {
+            }else {
                 alert("❌ Tools Not Exist.");
             }
         })
