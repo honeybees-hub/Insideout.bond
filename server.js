@@ -1,81 +1,47 @@
 //server.js
-const searchKey = document.getElementById('search-input');
-const button = document.getElementById('search-button');
+document.addEventListener('DOMContentLoaded', () => {
+	const searchKey = document.getElementById('search-input');
+	const button = document.getElementById('search-button');
 
+	
 
+	// Map keyword lists to target URLs
+	const routes = [
+		{ keys: ['qr', 'qrcode', 'qrcodegenerator'], url: 'https://qrgenerator.inbondz.com' },
+		{ keys: ['tic', 'tac', 'toe', 'tictactoe'], url: 'https://tictactoe.inbondz.com' },
+		{ keys: ['thumbnailextractor', 'thumbnail', 'youtubethumbnaildownloader', 'youtubethumbnail', 'thumbnaildownloader', 'ytthumbnaile', 'ytthumbnailedownloader'], url: 'https://ytthumbnailextractor.inbondz.com' },
+		{ keys: ['imageenhancer', 'photoenhancer'], url: 'https://imageenhancer.inbondz.com' },
+		{ keys: ['fontgenerator', 'textstyler'], url: 'https://fontgenerator.inbondz.com' },
+		{ keys: ['jsonformatter', 'json'], url: 'https://jsonformatter.inbondz.com/' },
+	];
 
-function searchNews() {
+	function searchNews() {
+		const searchText = (searchKey.value || '').trim().toLowerCase();
 
+		if (!searchText) {
+			alert('Please enter a search term');
+			return;
+		}
 
-    fetch("data.json")
-        .then(response => response.json())
-        .then(data => {
-            let searchText = searchKey.value.trim().toLowerCase();
+		for (const route of routes) {
+			if (route.keys.includes(searchText)) {
+				window.location.href = route.url;
+				return;
+			}
+		}
 
-            // Check if any "news" value matches
-            const found = data.some(item => item.Tools.toLowerCase().includes(searchText)); // ???????????????
+		alert('❌ Tool is not Exist.');
+	}
 
-            const matchedItem = data.find(item =>
-                item.Tools.toLowerCase().includes(searchText)
-            );
+	button.addEventListener('click', (e) => {
+		e.preventDefault();
+		searchNews();
+	});
 
-            if (searchText === '') {
-                alert("⚠️ Please enter some text!");
-                return;
-            }
-
-
-             if (searchText === "qr","qrcode","qrcodegenerator"){
-                
-                window.location.href = `https://qrgenerator.inbondz.com`;
-
-            }else if (searchText === 'tic','tac','toe','tictactoe'){
-                
-                window.location.href = 'https://tictactoe.inbondz.com'
-            }else if (searchText === 'thumbnailextractor','thumbnail','youtubethumbnaildownloader','youtubethumbnail','thumbnaildownloader','ytthumbnaile','ytthumbnailedownloader'){
-               
-                window.location.href = 'https://ytthumbnailextractor.inbondz.com'
-            }else if (searchText === 'imageenhancer','photoenhancer'){
-                
-                window.location.href = 'https://imageenhancer.inbondz.com'
-            }else if (searchText === 'fontgenerator','textstyler'){
-                
-                window.location.href = 'https://fontgenerator.inbondz.com'
-            }else if (searchText === 'jsonformatter','json'){
-               
-                window.location.href = 'https://jsonformatter.inbondz.com/'
-            }else {
-                alert("❌ Tools Not Exist.");
-            }
-        })
-        // const handleSearch = () => {
-            //     const searchTerm = searchInput.value.trim();
-            //     if (searchTerm !== '') {
-            //         messageElement.textContent = `Standard search executed for: "${searchTerm}". Tool functionality is not implemented.`;
-            //     } else {
-            //         messageElement.textContent = "Please enter a tool name to search.";
-            //     }
-            // };
-
-            // searchButton.addEventListener('click', handleSearch);
-
-            // searchInput.addEventListener('keydown', (e) => {
-            //     if (e.key === 'Enter') {
-            //         handleSearch();
-            //     }
-            // });
-
-
-};
-
-
-button.addEventListener('click', () => {
-     searchNews();
-});
-
-
-searchKey.addEventListener('keypress', (event) => {
-    if (event.key === 'Enter') {
-        searchNews();
-    }
+	searchKey.addEventListener('keypress', (event) => {
+		if (event.key === 'Enter') {
+			event.preventDefault();
+			searchNews();
+		}
+	});
 });
