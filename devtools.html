@@ -11,7 +11,7 @@
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -39,7 +39,7 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #000000; 
+            background-color: #000000;
             color: #e0e0e0;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             overflow-x: hidden;
@@ -53,7 +53,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1; /* Behind everything */
+            z-index: -1;
+            /* Behind everything */
             pointer-events: none;
         }
 
@@ -62,17 +63,28 @@
             background: white;
             border-radius: 50%;
             opacity: 0.8;
-            box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.4); 
+            box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.4);
             animation: twinkle var(--duration) infinite ease-in-out;
         }
 
         @keyframes twinkle {
-            0%, 100% { opacity: 0.3; transform: scale(0.8); }
-            50% { opacity: 1; transform: scale(1.2); }
+
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: scale(0.8);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
         }
-        
+
         /* Ensure links/buttons are clickable over stars */
-        main, header, footer {
+        main,
+        header,
+        footer {
             position: relative;
             z-index: 10;
         }
@@ -100,80 +112,115 @@
                 <h2 class="text-3xl font-bold text-center mb-12 text-text-dark">Our Comprehensive Dev Tools</h2>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    
+
                     <!-- Card 1 -->
                     <a href="https://tictactoe.inbondz.com">
                         <!-- UPDATED: bg-transparent, removed backdrop-blur -->
-                        <div class="bg-transparent p-6 rounded-xl shadow-lg border border-border-light hover:border-cta-blue transition duration-300 transform hover:scale-[1.02] hover:shadow-xl cursor-pointer h-full relative group">
+                        <div
+                            class="bg-transparent p-6 rounded-xl shadow-lg border border-border-light hover:border-cta-blue transition duration-300 transform hover:scale-[1.02] hover:shadow-xl cursor-pointer h-full relative group">
                             <!-- Glow effect behind card on hover (kept for interactivity, invisible by default) -->
-                            <div class="absolute inset-0 bg-cta-blue/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            
-                            <div class="flex items-center justify-center w-12 h-12 rounded-full bg-cta-blue/20 text-cta-blue mb-4 relative z-10">
+                            <div
+                                class="absolute inset-0 bg-cta-blue/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+
+                            <div
+                                class="flex items-center justify-center w-12 h-12 rounded-full bg-cta-blue/20 text-cta-blue mb-4 relative z-10">
                                 <span class="font-mono font-bold text-lg tracking-tighter">&lt;/&gt;</span>
                             </div>
-                            <h3 class="text-xl font-semibold mb-2 text-text-dark relative z-10" style="color: yellow;">Tic Tac Toe</h3>
-                            <p class="text-text-muted-dark text-sm relative z-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor distinctio nisi voluptatem quia nesciunt eius sint atque hic!</p>
+                            <h3 class="text-xl font-semibold mb-2 text-text-dark relative z-10" style="color: yellow;">
+                                Tic Tac Toe</h3>
+                            <p class="text-text-muted-dark text-sm relative z-10">Lorem ipsum dolor sit amet,
+                                consectetur adipisicing elit. Dolor distinctio nisi voluptatem quia nesciunt eius sint
+                                atque hic!</p>
                         </div>
                     </a>
                     <a href="https://tictactoe.inbondz.com">
                         <!-- UPDATED: bg-transparent, removed backdrop-blur -->
-                        <div class="bg-transparent p-6 rounded-xl shadow-lg border border-border-light hover:border-cta-blue transition duration-300 transform hover:scale-[1.02] hover:shadow-xl cursor-pointer h-full relative group">
+                        <div
+                            class="bg-transparent p-6 rounded-xl shadow-lg border border-border-light hover:border-cta-blue transition duration-300 transform hover:scale-[1.02] hover:shadow-xl cursor-pointer h-full relative group">
                             <!-- Glow effect behind card on hover (kept for interactivity, invisible by default) -->
-                            <div class="absolute inset-0 bg-cta-blue/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            
-                            <div class="flex items-center justify-center w-12 h-12 rounded-full bg-cta-blue/20 text-cta-blue mb-4 relative z-10">
+                            <div
+                                class="absolute inset-0 bg-cta-blue/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+
+                            <div
+                                class="flex items-center justify-center w-12 h-12 rounded-full bg-cta-blue/20 text-cta-blue mb-4 relative z-10">
                                 <span class="font-mono font-bold text-lg tracking-tighter">&lt;/&gt;</span>
                             </div>
-                            <h3 class="text-xl font-semibold mb-2 text-text-dark relative z-10" style="color: yellow;">Tic Tac Toe</h3>
-                            <p class="text-text-muted-dark text-sm relative z-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor distinctio nisi voluptatem quia nesciunt eius sint atque hic!</p>
+                            <h3 class="text-xl font-semibold mb-2 text-text-dark relative z-10" style="color: yellow;">
+                                Tic Tac Toe</h3>
+                            <p class="text-text-muted-dark text-sm relative z-10">Lorem ipsum dolor sit amet,
+                                consectetur adipisicing elit. Dolor distinctio nisi voluptatem quia nesciunt eius sint
+                                atque hic!</p>
                         </div>
                     </a>
                     <a href="https://tictactoe.inbondz.com">
                         <!-- UPDATED: bg-transparent, removed backdrop-blur -->
-                        <div class="bg-transparent p-6 rounded-xl shadow-lg border border-border-light hover:border-cta-blue transition duration-300 transform hover:scale-[1.02] hover:shadow-xl cursor-pointer h-full relative group">
+                        <div
+                            class="bg-transparent p-6 rounded-xl shadow-lg border border-border-light hover:border-cta-blue transition duration-300 transform hover:scale-[1.02] hover:shadow-xl cursor-pointer h-full relative group">
                             <!-- Glow effect behind card on hover (kept for interactivity, invisible by default) -->
-                            <div class="absolute inset-0 bg-cta-blue/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            
-                            <div class="flex items-center justify-center w-12 h-12 rounded-full bg-cta-blue/20 text-cta-blue mb-4 relative z-10">
+                            <div
+                                class="absolute inset-0 bg-cta-blue/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+
+                            <div
+                                class="flex items-center justify-center w-12 h-12 rounded-full bg-cta-blue/20 text-cta-blue mb-4 relative z-10">
                                 <span class="font-mono font-bold text-lg tracking-tighter">&lt;/&gt;</span>
                             </div>
-                            <h3 class="text-xl font-semibold mb-2 text-text-dark relative z-10" style="color: yellow;">Tic Tac Toe</h3>
-                            <p class="text-text-muted-dark text-sm relative z-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor distinctio nisi voluptatem quia nesciunt eius sint atque hic!</p>
+                            <h3 class="text-xl font-semibold mb-2 text-text-dark relative z-10" style="color: yellow;">
+                                Tic Tac Toe</h3>
+                            <p class="text-text-muted-dark text-sm relative z-10">Lorem ipsum dolor sit amet,
+                                consectetur adipisicing elit. Dolor distinctio nisi voluptatem quia nesciunt eius sint
+                                atque hic!</p>
                         </div>
                     </a>
                     <a href="https://tictactoe.inbondz.com">
                         <!-- UPDATED: bg-transparent, removed backdrop-blur -->
-                        <div class="bg-transparent p-6 rounded-xl shadow-lg border border-border-light hover:border-cta-blue transition duration-300 transform hover:scale-[1.02] hover:shadow-xl cursor-pointer h-full relative group">
+                        <div
+                            class="bg-transparent p-6 rounded-xl shadow-lg border border-border-light hover:border-cta-blue transition duration-300 transform hover:scale-[1.02] hover:shadow-xl cursor-pointer h-full relative group">
                             <!-- Glow effect behind card on hover (kept for interactivity, invisible by default) -->
-                            <div class="absolute inset-0 bg-cta-blue/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            
-                            <div class="flex items-center justify-center w-12 h-12 rounded-full bg-cta-blue/20 text-cta-blue mb-4 relative z-10">
+                            <div
+                                class="absolute inset-0 bg-cta-blue/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+
+                            <div
+                                class="flex items-center justify-center w-12 h-12 rounded-full bg-cta-blue/20 text-cta-blue mb-4 relative z-10">
                                 <span class="font-mono font-bold text-lg tracking-tighter">&lt;/&gt;</span>
                             </div>
-                            <h3 class="text-xl font-semibold mb-2 text-text-dark relative z-10" style="color: yellow;">Tic Tac Toe</h3>
-                            <p class="text-text-muted-dark text-sm relative z-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor distinctio nisi voluptatem quia nesciunt eius sint atque hic!</p>
+                            <h3 class="text-xl font-semibold mb-2 text-text-dark relative z-10" style="color: yellow;">
+                                Tic Tac Toe</h3>
+                            <p class="text-text-muted-dark text-sm relative z-10">Lorem ipsum dolor sit amet,
+                                consectetur adipisicing elit. Dolor distinctio nisi voluptatem quia nesciunt eius sint
+                                atque hic!</p>
                         </div>
                     </a>
                     <a href="https://tictactoe.inbondz.com">
                         <!-- UPDATED: bg-transparent, removed backdrop-blur -->
-                        <div class="bg-transparent p-6 rounded-xl shadow-lg border border-border-light hover:border-cta-blue transition duration-300 transform hover:scale-[1.02] hover:shadow-xl cursor-pointer h-full relative group">
+                        <div
+                            class="bg-transparent p-6 rounded-xl shadow-lg border border-border-light hover:border-cta-blue transition duration-300 transform hover:scale-[1.02] hover:shadow-xl cursor-pointer h-full relative group">
                             <!-- Glow effect behind card on hover (kept for interactivity, invisible by default) -->
-                            <div class="absolute inset-0 bg-cta-blue/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            
-                            <div class="flex items-center justify-center w-12 h-12 rounded-full bg-cta-blue/20 text-cta-blue mb-4 relative z-10">
+                            <div
+                                class="absolute inset-0 bg-cta-blue/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            </div>
+
+                            <div
+                                class="flex items-center justify-center w-12 h-12 rounded-full bg-cta-blue/20 text-cta-blue mb-4 relative z-10">
                                 <span class="font-mono font-bold text-lg tracking-tighter">&lt;/&gt;</span>
                             </div>
-                            <h3 class="text-xl font-semibold mb-2 text-text-dark relative z-10" style="color: yellow;">Tic Tac Toe</h3>
-                            <p class="text-text-muted-dark text-sm relative z-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor distinctio nisi voluptatem quia nesciunt eius sint atque hic!</p>
+                            <h3 class="text-xl font-semibold mb-2 text-text-dark relative z-10" style="color: yellow;">
+                                Tic Tac Toe</h3>
+                            <p class="text-text-muted-dark text-sm relative z-10">Lorem ipsum dolor sit amet,
+                                consectetur adipisicing elit. Dolor distinctio nisi voluptatem quia nesciunt eius sint
+                                atque hic!</p>
                         </div>
                     </a>
 
-                   
 
-                  
 
-                   
-                     
+
+
+
+
 
                 </div>
             </div>
@@ -186,8 +233,10 @@
                 <div>
                     <ul class="space-y-2 text-sm text-gray-400">
                         <li><a href="contact.html" class="hover:text-cta-blue transition-colors">Contact Us</a></li>
-                        <li><a href="privacy-policy.html" class="hover:text-cta-blue transition-colors">Privacy Policy</a></li>
-                        <li><a href="terms-of-service.html" class="hover:text-cta-blue transition-colors">Terms of Service</a></li>
+                        <li><a href="privacy-policy.html" class="hover:text-cta-blue transition-colors">Privacy
+                                Policy</a></li>
+                        <li><a href="terms-of-service.html" class="hover:text-cta-blue transition-colors">Terms of
+                                Service</a></li>
                         <li><a href="index.html" class="hover:text-cta-blue transition-colors">Home</a></li>
                     </ul>
                 </div>
@@ -215,10 +264,10 @@
                 // Random Position
                 const x = Math.random() * 100;
                 const y = Math.random() * 100;
-                
+
                 // Random Size
                 const size = Math.random() < 0.9 ? Math.random() * 2 : Math.random() * 3.5;
-                
+
                 // Random Animation Duration
                 const duration = 2 + Math.random() * 4;
                 const delay = Math.random() * 5;
@@ -240,9 +289,10 @@
         }
 
         createStars();
-        
+
         // Initialize Lucide icons
         lucide.createIcons();
     </script>
 </body>
+
 </html>
