@@ -2,4 +2,4 @@ User-agent: *
 Disallow: 
 
 
-Sitemap: https://inbondz.com/sitemap.xml
+Sitemap: https://insideout.bond/sitemap.xml
