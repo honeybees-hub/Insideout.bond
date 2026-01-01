@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YouTube Thumbnail Downloader </title>
     <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
 
-    <meta name="application-name" content="Inbondz">
-    <meta name="description" content="Fast, Free, and High-Quality YouTube Thumbnail Extraction. Download HD, Full HD, and standard quality thumbnails instantly with Inbondz.">
-     
+    <meta name="application-name" content="Insideout">
+    <meta name="description"
+        content="Fast, Free, and High-Quality YouTube Thumbnail Extraction. Download HD, Full HD, and standard quality thumbnails instantly with Insideout.">
+
     <!-- Importing Google Fonts: Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-     
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <style>
         /* --- CSS Variables & Reset --- */
         :root {
-            --primary-color: #ff0000; /* YouTube Red */
+            --primary-color: #ff0000;
+            /* YouTube Red */
             --primary-hover: #cc0000;
             --bg-color: #f9f9f9;
             --card-bg: #ffffff;
@@ -132,17 +136,43 @@
         }
 
         .error-msg {
-            color: var(--primary-color);
+            color: #d32f2f;
             margin-top: 1rem;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             font-weight: 500;
-            display: none; /* Hidden by default */
+            display: none;
+            padding: 0.75rem;
+            background: #ffebee;
+            border-radius: 8px;
             animation: fadeIn 0.3s ease;
+        }
+
+        /* --- Loading Spinner --- */
+        .loader {
+            display: none;
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--primary-color);
+            border-radius: 50%;
+            margin: 2rem auto;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         /* --- Results Section (Thumbnails) --- */
         #results-area {
-            display: none; /* Hidden until content is generated */
+            display: none;
+            /* Hidden until content is generated */
             animation: slideUp 0.5s ease;
             margin-bottom: 4rem;
         }
@@ -197,7 +227,7 @@
             position: relative;
             width: 100%;
             /* 16:9 Aspect Ratio hack */
-            padding-bottom: 56.25%; 
+            padding-bottom: 56.25%;
             background-color: #000;
         }
 
@@ -276,7 +306,8 @@
             color: var(--text-light);
         }
 
-        .info-section ul, .info-section ol {
+        .info-section ul,
+        .info-section ol {
             margin-bottom: 1.5rem;
             padding-left: 1.5rem;
             color: var(--text-light);
@@ -319,25 +350,38 @@
 
         /* --- Animations --- */
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         @keyframes slideUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1605V9LS1K"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-1605V9LS1K');
+    gtag('config', 'G-1605V9LS1K');
 </script>
+
 <body>
 
     <div class="container">
@@ -367,82 +411,122 @@
         <section class="info-section">
             <h2>Welcome to the YouTube Thumbnail Downloader</h2>
             <p>
-                Welcome to the <strong>YouTube Thumbnail Downloader </strong>, the easiest way to view and save cover images from any YouTube video. Whether you are a content creator looking for inspiration, a student needing visuals for a presentation, or a designer archiving reference material, this tool simplifies the process.
+                Welcome to the <strong>YouTube Thumbnail Downloader </strong>, the easiest way to view and save cover
+                images from any YouTube video. Whether you are a content creator looking for inspiration, a student
+                needing visuals for a presentation, or a designer archiving reference material, this tool simplifies the
+                process.
             </p>
             <p>
-                This is a completely free YouTube thumbnail downloader online that requires no account registration, no software installation, and no hidden fees. Simply paste your link, and our YouTube thumbnail extractor tool will instantly fetch the image. You can use it to download YouTube thumbnails in HD, Full HD, or standard quality directly to your device in seconds.
+                This is a completely free YouTube thumbnail downloader online that requires no account registration, no
+                software installation, and no hidden fees. Simply paste your link, and our YouTube thumbnail extractor
+                tool will instantly fetch the image. You can use it to download YouTube thumbnails in HD, Full HD, or
+                standard quality directly to your device in seconds.
             </p>
 
             <h2>What This Tool Does</h2>
             <p>
-                The Inbondz YouTube Thumbnail Downloader is designed to bridge the gap between a video URL and its cover image. When a creator uploads a video to YouTube, the platform automatically generates and stores the thumbnail image in several different resolutions and aspect ratios.
+                The Insideout YouTube Thumbnail Downloader is designed to bridge the gap between a video URL and its
+                cover
+                image. When a creator uploads a video to YouTube, the platform automatically generates and stores the
+                thumbnail image in several different resolutions and aspect ratios.
             </p>
             <p>
-                Our tool works by analyzing the YouTube link you provide to identify the unique Video ID. It then communicates with YouTube’s public servers to locate every available version of that cover image. You will see options ranging from small, low-bandwidth placeholders to high-definition versions (like 1080p or MaxResDefault), depending entirely on the quality of the original video upload. We ensure you get the direct image file without the clutter of video player overlays or watermarks.
+                Our tool works by analyzing the YouTube link you provide to identify the unique Video ID. It then
+                communicates with YouTube’s public servers to locate every available version of that cover image. You
+                will see options ranging from small, low-bandwidth placeholders to high-definition versions (like 1080p
+                or MaxResDefault), depending entirely on the quality of the original video upload. We ensure you get the
+                direct image file without the clutter of video player overlays or watermarks.
             </p>
 
             <h2>How To Use YouTube Thumbnail Downloader</h2>
-            <p>Using this tool is straightforward and works the same way on both desktop computers and mobile devices. Follow these simple steps:</p>
+            <p>Using this tool is straightforward and works the same way on both desktop computers and mobile devices.
+                Follow these simple steps:</p>
             <ol>
-                <li><strong>Copy the URL:</strong> Open the YouTube app or website, find the video you want, and copy the link from the address bar or the "Share" button.</li>
-                <li><strong>Paste the Link:</strong> Return to Inbondz and paste the URL into the input box at the top of this page.</li>
+                <li><strong>Copy the URL:</strong> Open the YouTube app or website, find the video you want, and copy
+                    the link from the address bar or the "Share" button.</li>
+                <li><strong>Paste the Link:</strong> Return to Insideout and paste the URL into the input box at the top
+                    of this page.</li>
                 <li><strong>Click to Extract:</strong> Hit the "Get Thumbnail" button to process the link.</li>
-                <li><strong>Preview Sizes:</strong> The tool will display all available image resolutions (e.g., HD, SD, Normal).</li>
-                <li><strong>Download:</strong> Click the "Download" button next to your preferred size, or right-click (long-press on mobile) the image to save it to your device.</li>
+                <li><strong>Preview Sizes:</strong> The tool will display all available image resolutions (e.g., HD, SD,
+                    Normal).</li>
+                <li><strong>Download:</strong> Click the "Download" button next to your preferred size, or right-click
+                    (long-press on mobile) the image to save it to your device.</li>
             </ol>
 
             <h2>Why This Tool Is Useful</h2>
-            <p>Manually trying to capture a thumbnail often results in poor quality. Here is why using the Inbondz extractor is the better choice:</p>
+            <p>Manually trying to capture a thumbnail often results in poor quality. Here is why using the Insideout
+                extractor is the better choice:</p>
             <ul>
-                <li><strong>Higher Quality:</strong> Unlike taking a screenshot, which captures video player buttons and lowers resolution, this tool fetches the clean, original image file.</li>
-                <li><strong>Time-Saving:</strong> It automates the technical work, saving you from inspecting page sources or using complex software.</li>
-                <li><strong>Versatile Use Cases:</strong> It is perfect for bloggers needing featured images, teachers creating slide decks, or YouTubers analyzing competitors' designs for A/B testing.</li>
-                <li><strong>Cross-Platform:</strong> The tool is entirely web-based, meaning it works perfectly on Chrome, Safari, Firefox, and Edge across Windows, macOS, Android, and iOS.</li>
+                <li><strong>Higher Quality:</strong> Unlike taking a screenshot, which captures video player buttons and
+                    lowers resolution, this tool fetches the clean, original image file.</li>
+                <li><strong>Time-Saving:</strong> It automates the technical work, saving you from inspecting page
+                    sources or using complex software.</li>
+                <li><strong>Versatile Use Cases:</strong> It is perfect for bloggers needing featured images, teachers
+                    creating slide decks, or YouTubers analyzing competitors' designs for A/B testing.</li>
+                <li><strong>Cross-Platform:</strong> The tool is entirely web-based, meaning it works perfectly on
+                    Chrome, Safari, Firefox, and Edge across Windows, macOS, Android, and iOS.</li>
             </ul>
 
             <h2>Frequently Asked Questions (FAQ)</h2>
-            
+
             <div class="faq-item">
                 <span class="faq-question">Q1: What is a YouTube Thumbnail Downloader?</span>
-                <span class="faq-answer">It is a simple online utility that allows users to extract and save the preview image (thumbnail) of a YouTube video using only the video's URL.</span>
+                <span class="faq-answer">It is a simple online utility that allows users to extract and save the preview
+                    image (thumbnail) of a YouTube video using only the video's URL.</span>
             </div>
 
             <div class="faq-item">
                 <span class="faq-question">Q2: Is this YouTube thumbnail extractor free to use?</span>
-                <span class="faq-answer">Yes, Inbondz provides this tool completely free of charge. You do not need to sign up or pay a subscription. However, please remember to use downloaded images responsibly and respect the creator's rights.</span>
+                <span class="faq-answer">Yes, Insideout provides this tool completely free of charge. You do not need to
+                    sign up or pay a subscription. However, please remember to use downloaded images responsibly and
+                    respect the creator's rights.</span>
             </div>
 
             <div class="faq-item">
                 <span class="faq-question">Q3: Can I download HD or 4K thumbnails?</span>
-                <span class="faq-answer">Yes, if they exist. Our tool fetches the highest resolution available on YouTube's servers (often called "MaxRes"). If the original video was uploaded in low quality, high-definition thumbnails might not be available.</span>
+                <span class="faq-answer">Yes, if they exist. Our tool fetches the highest resolution available on
+                    YouTube's servers (often called "MaxRes"). If the original video was uploaded in low quality,
+                    high-definition thumbnails might not be available.</span>
             </div>
 
             <div class="faq-item">
                 <span class="faq-question">Q4: Does this work on mobile phones?</span>
-                <span class="faq-answer">Absolutely. You can use this tool on any Android or iPhone via your web browser. To save the image, simply long-press the thumbnail and select "Save Image" or "Download Image."</span>
+                <span class="faq-answer">Absolutely. You can use this tool on any Android or iPhone via your web
+                    browser. To save the image, simply long-press the thumbnail and select "Save Image" or "Download
+                    Image."</span>
             </div>
 
             <div class="faq-item">
                 <span class="faq-question">Q5: Is it safe and legal to use these thumbnails?</span>
-                <span class="faq-answer">The tool is safe as it only fetches publicly available image links directly from YouTube. Regarding legality, you can download them for personal reference or "fair use" contexts (like teaching or criticism). However, re-uploading someone else’s thumbnail as your own on YouTube is generally a violation of copyright and Terms of Service.</span>
+                <span class="faq-answer">The tool is safe as it only fetches publicly available image links directly
+                    from YouTube. Regarding legality, you can download them for personal reference or "fair use"
+                    contexts (like teaching or criticism). However, re-uploading someone else’s thumbnail as your own on
+                    YouTube is generally a violation of copyright and Terms of Service.</span>
             </div>
 
             <div class="faq-item">
                 <span class="faq-question">Q6: Do I need to install any software or extensions?</span>
-                <span class="faq-answer">No. Inbondz is a cloud-based tool. All processing happens in your browser, so you do not need to download any apps or browser extensions.</span>
+                <span class="faq-answer">No. Insideout is a cloud-based tool. All processing happens in your browser, so
+                    you do not need to download any apps or browser extensions.</span>
             </div>
 
             <div class="faq-item">
                 <span class="faq-question">Q7: Why can’t I see a "Max Resolution" thumbnail for some videos?</span>
-                <span class="faq-answer">If a video is very old or was uploaded in a low resolution (like 360p or 480p), YouTube may not have generated a high-definition thumbnail for it. The tool can only display what is available on the server.</span>
+                <span class="faq-answer">If a video is very old or was uploaded in a low resolution (like 360p or 480p),
+                    YouTube may not have generated a high-definition thumbnail for it. The tool can only display what is
+                    available on the server.</span>
             </div>
 
         </section>
 
+        <!-- Loading State -->
+        <div id="loader" class="loader"></div>
+
         <!-- Footer -->
         <footer>
-            <p><strong>Note:</strong> Please respect the content creator's copyright. Only use thumbnails that you have permission to use or for personal reference.</p>
-            <p style="margin-top: 0.5rem; opacity: 0.7;">&copy; Inbondz Tools. All rights reserved.</p>
+            <p><strong>Note:</strong> Please respect the content creator's copyright. Only use thumbnails that you have
+                permission to use or for personal reference.</p>
+            <p style="margin-top: 0.5rem; opacity: 0.7;">&copy; Insideout Tools. All rights reserved.</p>
         </footer>
     </div>
 
@@ -456,7 +540,8 @@
             const errorMsg = document.getElementById('errorMsg');
             const resultsArea = document.getElementById('results-area');
             const container = document.getElementById('thumbnailsContainer');
-            
+            const loader = document.getElementById('loader');
+
             const url = urlInput.value.trim();
 
             // 1. Clear previous state
@@ -470,21 +555,19 @@
                 return;
             }
 
+            // Show loader
+            loader.style.display = 'block';
+
             // 3. Extract Video ID
             const videoId = extractVideoId(url);
 
             if (!videoId) {
+                loader.style.display = 'none';
                 showError("Could not find a valid video ID. Please check the URL.");
                 return;
             }
 
             // 4. Generate Data for different qualities
-            // YouTube thumbnail structure:
-            // maxresdefault.jpg (1280x720) - Not always available for 480p videos
-            // sddefault.jpg (640x480)
-            // hqdefault.jpg (480x360)
-            // mqdefault.jpg (320x180)
-            
             const qualities = [
                 {
                     label: "Max Resolution (HD)",
@@ -515,26 +598,35 @@
             });
 
             // 6. Show and Scroll
-            resultsArea.style.display = 'block';
-            
-            // Smooth scroll to the results
+            // Use window.onload trick for images or a slight timeout
             setTimeout(() => {
+                loader.style.display = 'none';
+                resultsArea.style.display = 'block';
                 resultsArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 100);
+            }, 800);
         }
 
         /**
          * Extracts the YouTube Video ID from various URL formats.
-         * Supports:
-         * - youtube.com/watch?v=ID
-         * - youtu.be/ID
-         * - youtube.com/embed/ID
-         * - youtube.com/shorts/ID
+         * Support for Shorts, Embed, Watch, and shortened URLs.
          */
         function extractVideoId(url) {
-            const regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
-            const match = url.match(regExp);
-            return (match && match[7].length == 11) ? match[7] : false;
+            const patterns = [
+                /(?:v=|\/)([0-9A-Za-z_-]{11}).*/,  // Standard and Shorts
+                /^([0-9A-Za-z_-]{11})$/            // Direct ID
+            ];
+
+            // Handle standard formats including /shorts/
+            if (url.includes('youtube.com') || url.includes('youtu.be')) {
+                // regex to catch ID after v= or after /shorts/ or after /embed/
+                const regExp = /^.*(?:(?:youtu\.be\/|v\/|vi\/|u\/\w\/|embed\/|shorts\/)|(?:(?:watch)?\?v(?:i)?=|\&v(?:i)?=))([^#\&\?]*).*/;
+                const match = url.match(regExp);
+                return (match && match[1].length === 11) ? match[1] : false;
+            }
+
+            // Fallback for direct ID
+            const directMatch = url.match(/^([0-9A-Za-z_-]{11})$/);
+            return directMatch ? directMatch[1] : false;
         }
 
         /**
@@ -547,6 +639,35 @@
         }
 
         /**
+         * Handles image loading events.
+         * YouTube returns a 120x90 placeholder even for missing resolutions,
+         * so we check naturalWidth to hide the card if it's the placeholder.
+         */
+        function handleImageLoad(element) {
+            // YouTube's "not found" placeholder is 120x90
+            if (element.naturalWidth === 120 && element.naturalHeight === 90) {
+                hideCard(element);
+            }
+        }
+
+        /**
+         * Handles broken image loads (404s).
+         */
+        function handleImageError(element) {
+            hideCard(element);
+        }
+
+        /**
+         * Helper to hide the parent card of an image.
+         */
+        function hideCard(element) {
+            const card = element.closest('.card');
+            if (card) {
+                card.style.display = 'none';
+            }
+        }
+
+        /**
          * Generates the HTML string for a single thumbnail card.
          */
         function createCardHTML(item) {
@@ -556,17 +677,14 @@
                         ${item.label} (${item.resolution})
                     </div>
                     <div class="img-wrapper">
-                        <img src="${item.url}" alt="${item.label}">
+                        <img src="${item.url}" alt="${item.label}" 
+                             onload="handleImageLoad(this)" 
+                             onerror="handleImageError(this)">
                     </div>
                     <div class="card-body">
-                        <!-- Read-only input for easy copying -->
                         <input type="text" class="url-box" value="${item.url}" readonly onclick="this.select()">
-                        
-                        <!-- Download Button -->
-                        <!-- Note: Using target="_blank" because direct download via 'download' attribute 
-                             is often blocked by CORS for external domains without a backend proxy. -->
                         <a href="${item.url}" target="_blank" class="btn-download" rel="noopener noreferrer">
-                            Download Image
+                            Open Full Image
                         </a>
                     </div>
                 </div>
@@ -582,4 +700,5 @@
 
     </script>
 </body>
+
 </html>
