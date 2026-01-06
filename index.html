@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
 
     <meta name="application-name" content="Insideout">
-    <script src="https://unpkg.com/lucide@latest/dist/lucide.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 
 
     <!-- Load Tailwind CSS -->
@@ -121,12 +121,12 @@
 
                     <a href="tools.html"
                         class="inline-flex items-center px-6 py-3 border border-border-light text-base font-semibold rounded-lg text-text-dark hover:bg-secondary-bg transition duration-300"
-                        style="color: white; background-color:  #055e6c;">
+                        style="color: rgb(0, 0, 0); background-color:  #f5f113;">
                         Explore Tools
                     </a>
                     <a href="games.html"
                         class="inline-flex items-center px-6 py-3 border border-border-light text-base font-semibold rounded-lg text-text-dark hover:bg-secondary-bg transition duration-300"
-                        style="color: white; background-color:  #055e6c;">
+                        style="color: white; background-color:  #b805b8;">
                         Games
                     </a>
                 </div>
@@ -138,52 +138,80 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl font-bold text-center mb-12 text-text-dark">Our Insideout Tools</h2>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                    <!-- Feature 1: Payment Gateway (Animated) -->
-                    <a href="Tools/magic-enhancer.html">
-                        <div class="bg-primary-bg p-6 rounded-xl shadow-lg border border-border-light hover:border-cta-blue transition duration-300 transform hover:scale-[1.02] hover:shadow-xl cursor-pointer"
-                            style="background-color: #3a3a3a; color: #fff;">
-                            <!-- Icon Color Updated -->
-                            <div
-                                class="flex items-center justify-center w-12 h-12 rounded-full bg-cta-blue/20 text-cta-blue mb-4">
-                                <i data-lucide="zap" class="w-6 h-6"></i>
+                    <!-- CARD 1: MAGIC IMAGE ENHANCER -->
+                    <a href="Tools/magic-enhancer.html"
+                        class="game-card relative group w-full aspect-[16/10] bg-gray-800 rounded-2xl overflow-hidden block shadow-lg hover:shadow-2xl transition-all duration-300">
+                        <img src="tools/images/image enhancer.png" alt="Magic Image Enhancer"
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10">
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-5 z-20 flex items-end justify-between">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-blue-500/20 backdrop-blur-md border border-white/10 flex items-center justify-center shadow-lg">
+                                    <i data-lucide="zap" class="w-6 h-6 text-blue-400"></i>
+                                </div>
+                                <div class="text-white">
+                                    <h3 class="text-lg font-bold leading-tight">Magic Enhancer</h3>
+                                    <p class="text-xs text-gray-300">AI Image Processing</p>
+                                </div>
                             </div>
-                            <h3 class="text-xl font-semibold mb-2 text-text-dark" style="color: yellow;">Magic Image
-                                Enhancer
-                            </h3>
-                            <p class="text-text-muted-dark text-sm">Enhance Your Images.</p>
+                            <span
+                                class="bg-white/10 backdrop-blur-md border border-white/20 text-[10px] uppercase tracking-wider font-bold px-3 py-1 rounded-full text-white">
+                                Free
+                            </span>
                         </div>
                     </a>
 
-                    <!-- Feature 2: Payroll & Payouts (Animated) -->
-                    <a href="Tools/ytthumbnailextractor.html">
-                        <div class="bg-primary-bg p-6 rounded-xl shadow-lg border border-border-light hover:border-cta-blue transition duration-300 transform hover:scale-[1.02] hover:shadow-xl cursor-pointer"
-                            style="background-color: #3a3a3a; color: #fff;">
-                            <!-- Icon Color Updated -->
-                            <div
-                                class="flex items-center justify-center w-12 h-12 rounded-full bg-cta-blue/20 text-cta-blue mb-4">
-                                <i data-lucide="send" class="w-6 h-6"></i>
+                    <!-- CARD 2: THUMBNAIL DOWNLOADER -->
+                    <a href="Tools/ytthumbnailextractor.html"
+                        class="game-card relative group w-full aspect-[16/10] bg-gray-800 rounded-2xl overflow-hidden block shadow-lg hover:shadow-2xl transition-all duration-300">
+                        <img src="tools/images/td.png" alt="Thumbnail Downloader"
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10">
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-5 z-20 flex items-end justify-between">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-red-500/20 backdrop-blur-md border border-white/10 flex items-center justify-center shadow-lg">
+                                    <i data-lucide="send" class="w-6 h-6 text-red-400"></i>
+                                </div>
+                                <div class="text-white">
+                                    <h3 class="text-lg font-bold leading-tight">Thumbnail Pro</h3>
+                                    <p class="text-xs text-gray-300">YouTube Utilities</p>
+                                </div>
                             </div>
-                            <h3 class="text-xl font-semibold mb-2 text-text-dark" style="color: yellow;">Thumbnail
-                                Downloader</h3>
-                            <p class="text-text-muted-dark text-sm">Download YouTube Thumbnails Easily.</p>
+                            <span
+                                class="bg-white/10 backdrop-blur-md border border-white/20 text-[10px] uppercase tracking-wider font-bold px-3 py-1 rounded-full text-white">
+                                Free
+                            </span>
                         </div>
                     </a>
 
-                    <!-- Feature 3: Business Banking (Animated) -->
-                    <a href="Tools/qr-generator.html">
-                        <div class="bg-primary-bg p-6 rounded-xl shadow-lg border border-border-light hover:border-cta-blue transition duration-300 transform hover:scale-[1.02] hover:shadow-xl cursor-pointer"
-                            style="background-color: #3a3a3a; color: #fff;">
-                            <!-- Icon Color Updated -->
-                            <div
-                                class="flex items-center justify-center w-12 h-12 rounded-full bg-cta-blue/20 text-cta-blue mb-4">
-                                <i data-lucide="banknote" class="w-6 h-6"></i>
+                    <!-- CARD 3: QR GENERATOR -->
+                    <a href="Tools/qr-generator.html"
+                        class="game-card relative group w-full aspect-[16/10] bg-gray-800 rounded-2xl overflow-hidden block shadow-lg hover:shadow-2xl transition-all duration-300">
+                        <img src="tools/images/qr generator.png" alt="QR Generator"
+                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10">
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-5 z-20 flex items-end justify-between">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-green-500/20 backdrop-blur-md border border-white/10 flex items-center justify-center shadow-lg">
+                                    <i data-lucide="qr-code" class="w-6 h-6 text-green-400"></i>
+                                </div>
+                                <div class="text-white">
+                                    <h3 class="text-lg font-bold leading-tight">QR Generator</h3>
+                                    <p class="text-xs text-gray-300">Connectivity Tool</p>
+                                </div>
                             </div>
-                            <h3 class="text-xl font-semibold mb-2 text-text-dark" style="color: yellow;">Qr code
-                                Generator
-                            </h3>
-                            <p class="text-text-muted-dark text-sm">Generate Qr code for free.</p>
+                            <span
+                                class="bg-white/10 backdrop-blur-md border border-white/20 text-[10px] uppercase tracking-wider font-bold px-3 py-1 rounded-full text-white">
+                                Free
+                            </span>
                         </div>
                     </a>
                 </div>
@@ -234,7 +262,7 @@
                         <!-- Secondary Button (Updated Color: cta-blue) -->
                         <a href="devtools.html"
                             class="mt-8 inline-flex items-center px-6 py-3 border border-cta-blue text-base font-semibold rounded-lg text-cta-blue hover:bg-cta-blue hover:text-white transition duration-300"
-                            style="background-color: #055e6c; color: #fff;">
+                            style="background-color: #000000; color: #fff;">
                             View Dev Tools <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
                         </a>
                     </div>
@@ -254,90 +282,153 @@
         </script>
         <!-- ads 1  end-->
 
-
-    </main>
-
-    <!-- Footer (Logo and Link Hover Colors Updated) -->
-    <footer class="bg-text-dark pt-12 pb-8  " style="border-top: 2px solid #9EA3A3;">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <!-- Col 1: Logo & Mission ("Insideout" and color updated) -->
-
-
-                <!-- Col 2: Products -->
-                <div>
-
-                    <ul class="space-y-2 text-sm text-gray-400">
-                        <li><a href="contact.html" class="hover:text-cta-blue">Contact Us</a></li>
-                        <li><a href="privacy-policy.html" class="hover:text-cta-blue">Privacy Policy</a></li>
-                        <li><a href="terms-of-service.html" class="hover:text-cta-blue">Terms of Service</a></li>
-                        <li><a href="index.html" class="hover:text-cta-blue">Home</a></li>
-                    </ul>
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 bg-gray-50 border-t border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-text-dark">Get in Touch</h2>
+                    <p class="mt-4 text-text-muted-dark max-w-2xl mx-auto">
+                        Have a question, feedback, or a tool request? Reach out to us directly through any of the
+                        channels below.
+                    </p>
                 </div>
 
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- WhatsApp Card -->
+                    <a href="https://wa.me/" target="_blank"
+                        class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 flex items-center gap-6 group block">
+                        <div
+                            class="p-4 bg-green-50 rounded-xl text-green-500 group-hover:bg-green-100 transition-colors">
+                            <i data-lucide="message-circle" class="w-8 h-8"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-xl font-bold text-gray-900 group-hover:text-green-600 transition-colors">
+                                WhatsApp Support</h4>
+                            <p class="text-sm text-gray-500 mt-1">Chat with us for fast responses</p>
+                        </div>
+                        <i data-lucide="arrow-right"
+                            class="w-5 h-5 text-gray-300 group-hover:text-green-500 transition-all transform group-hover:translate-x-1"></i>
+                    </a>
 
+                    <!-- Email Card -->
+                    <a href="mailto:insideoutwebservices@gmail.com"
+                        class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 flex items-center gap-6 group block">
+                        <div class="p-4 bg-blue-50 rounded-xl text-blue-500 group-hover:bg-blue-100 transition-colors">
+                            <i data-lucide="mail" class="w-8 h-8"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                                Direct Email</h4>
+                            <p class="text-sm text-gray-500 mt-1">insideoutwebservices@gmail.com</p>
+                        </div>
+                        <i data-lucide="arrow-right"
+                            class="w-5 h-5 text-gray-300 group-hover:text-blue-500 transition-all transform group-hover:translate-x-1"></i>
+                    </a>
+                </div>
             </div>
+        </section>
 
-            <div class="mt-10 border-t border-gray-700 pt-6 text-center text-sm text-gray-400">
-                &copy; Insideout | All rights reserved.
-                <br>
-                A platform of innovation.
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-gray-400 pt-16 pb-8 border-t-4 border-logo-gray">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                    <div class="space-y-4">
+                        <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+
+                            Insideout
+                        </h2>
+                        <p class="text-sm max-w-xs">
+                            Empowering users with privacy-focused web utilities and innovation since 2025.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">Navigation</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="index.html" class="hover:text-logo-gray transition-colors">Home Page</a></li>
+                            <li><a href="tools.html" class="hover:text-logo-gray transition-colors">All Tools</a></li>
+                            <li><a href="contact.html" class="hover:text-logo-gray transition-colors">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">Legal</h3>
+                        <ul class="space-y-2 text-sm">
+                            <li><a href="privacy-policy.html" class="hover:text-logo-gray transition-colors">Privacy
+                                    Policy</a></li>
+                            <li><a href="terms-of-service.html" class="hover:text-logo-gray transition-colors">Terms of
+                                    Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="pt-8 border-t border-gray-800 text-center">
+                    <p class="text-xs">&copy; 2025 Insideout.bond | A platform of innovation.</p>
+                    <div class="mt-4 flex justify-center gap-6">
+                        <a href="https://wa.me/" target="_blank" class="hover:text-white transition-colors">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                        </a>
+                        <a href="mailto:insideoutwebservices@gmail.com" class="hover:text-white transition-colors">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
-    <!-- Initialize Lucide Icons -->
-    <script>
-        lucide.createIcons();
-    </script>
-    <script>
+        <!-- Initialize Lucide Icons -->
+        <script>
+            window.addEventListener('load', () => {
+                lucide.createIcons();
+            });
+        </script>
+        <script>
 
-        const words = ['Thumbnail Downloader', 'JSON Formatter', 'Image Compressor', 'Image Enhancer', 'QR Code Generator', 'Text Styler', 'Tic Tac Toe'];
+            const words = ['Thumbnail Downloader', 'JSON Formatter', 'Image Compressor', 'Image Enhancer', 'QR Code Generator', 'Text Styler', 'Tic Tac Toe'];
 
-        const textElement = document.querySelector('.typewriter-text');
-        let wordIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        let typeSpeed = 150;
+            const textElement = document.querySelector('.typewriter-text');
+            let wordIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            let typeSpeed = 150;
 
-        function typeEffect() {
-            const currentWord = words[wordIndex];
+            function typeEffect() {
+                const currentWord = words[wordIndex];
 
-            if (isDeleting) {
+                if (isDeleting) {
 
-                textElement.textContent = currentWord.substring(0, charIndex - 1);
-                charIndex--;
-                typeSpeed = 50;
-            } else {
+                    textElement.textContent = currentWord.substring(0, charIndex - 1);
+                    charIndex--;
+                    typeSpeed = 50;
+                } else {
 
-                textElement.textContent = currentWord.substring(0, charIndex + 1);
-                charIndex++;
-                typeSpeed = 150; // টাইপ করার সময় নরমাল স্পিড
-            }
-
-            // যদি পুরো শব্দ টাইপ করা শেষ হয়
-            if (!isDeleting && charIndex === currentWord.length) {
-                isDeleting = true;
-                typeSpeed = 2000; // শব্দ শেষ হলে ২ সেকেন্ড অপেক্ষা করবে
-            }
-            // যদি পুরো শব্দ মুছে ফেলা শেষ হয়
-            else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                wordIndex++;
-                typeSpeed = 500; // নতুন শব্দ শুরুর আগে একটু বিরতি
-
-                // সব শব্দ শেষ হলে আবার শুরু থেকে লুপ হবে
-                if (wordIndex === words.length) {
-                    wordIndex = 0;
+                    textElement.textContent = currentWord.substring(0, charIndex + 1);
+                    charIndex++;
+                    typeSpeed = 150; // টাইপ করার সময় নরমাল স্পিড
                 }
+
+                // যদি পুরো শব্দ টাইপ করা শেষ হয়
+                if (!isDeleting && charIndex === currentWord.length) {
+                    isDeleting = true;
+                    typeSpeed = 2000; // শব্দ শেষ হলে ২ সেকেন্ড অপেক্ষা করবে
+                }
+                // যদি পুরো শব্দ মুছে ফেলা শেষ হয়
+                else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    wordIndex++;
+                    typeSpeed = 500; // নতুন শব্দ শুরুর আগে একটু বিরতি
+
+                    // সব শব্দ শেষ হলে আবার শুরু থেকে লুপ হবে
+                    if (wordIndex === words.length) {
+                        wordIndex = 0;
+                    }
+                }
+
+                setTimeout(typeEffect, typeSpeed);
             }
 
-            setTimeout(typeEffect, typeSpeed);
-        }
-
-        // এনিমেশন শুরু করুন
-        document.addEventListener('DOMContentLoaded', typeEffect);
-    </script>
+            // এনিমেশন শুরু করুন
+            document.addEventListener('DOMContentLoaded', typeEffect);
+        </script>
 </body>
 
 

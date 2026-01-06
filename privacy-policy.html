@@ -9,7 +9,7 @@
 
     <meta name="application-name" content="Insideout">
     <script src="https://unpkg.com/lucide@latest"></script>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -66,8 +66,10 @@
 
         /* Hide scrollbar for IE, Edge and Firefox */
         .no-scrollbar {
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;  /* Firefox */
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
         }
     </style>
 </head>
@@ -82,13 +84,18 @@
             <div class="flex items-center justify-between h-16">
                 <div class="flex-shrink-0">
                     <a href="index.html" class="text-2xl font-bold text-logo-gray flex items-center gap-2">
-                        <i data-lucide="shield-check" class="w-8 h-8"></i>
+
                         Insideout
                     </a>
                 </div>
                 <nav class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-sm font-medium text-gray-500 hover:text-logo-gray transition-colors">Home</a>
-                    <a href="#" class="text-sm font-medium text-logo-gray border-b-2 border-logo-gray">Privacy</a>
+                    <a href="index.html"
+                        class="text-sm font-medium text-gray-500 hover:text-logo-gray transition-colors">Home</a>
+                    <a href="privacy-policy.html"
+                        class="text-sm font-medium text-gray-500 hover:text-logo-gray border-b-2 border-logo-gray">Privacy</a>
+                    <a href="terms-of-service.html"
+                        class="text-sm font-medium text-gray-500 hover:text-logo-gray transition-colors">Terms</a>
+                    <a href="contact.html" class="text-sm font-medium text-logo-gray transition-colors">Contact</a>
                 </nav>
                 <div class="md:hidden">
                     <button id="mobile-menu-btn" class="p-2 text-gray-500">
@@ -97,21 +104,43 @@
                 </div>
             </div>
         </div>
+        <!-- Mobile Menu Container -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100">
+            <nav class="flex flex-col p-4 space-y-4">
+                <a href="index.html"
+                    class="text-sm font-medium text-gray-500 hover:text-logo-gray transition-colors">Home</a>
+                <a href="privacy-policy.html" class="text-sm font-medium text-logo-gray">Privacy</a>
+                <a href="terms-of-service.html"
+                    class="text-sm font-medium text-gray-500 hover:text-logo-gray transition-colors">Terms</a>
+                <a href="contact.html"
+                    class="text-sm font-medium text-gray-500 hover:text-logo-gray transition-colors">Contact</a>
+            </nav>
+        </div>
     </header>
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div class="flex flex-col lg:flex-row gap-12">
-            
+
             <!-- Sidebar Navigation (Dynamic) -->
             <aside class="lg:w-64 flex-shrink-0 hidden lg:block">
                 <div class="sticky top-28">
                     <h3 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Contents</h3>
                     <ul class="space-y-3 border-l-2 border-gray-100">
-                        <li><a href="#introduction" class="section-nav-link block pl-4 border-l-2 border-transparent -ml-[2px] hover:text-logo-gray transition-all">Introduction</a></li>
-                        <li><a href="#no-collect" class="section-nav-link block pl-4 border-l-2 border-transparent -ml-[2px] hover:text-logo-gray transition-all">What We Don't Collect</a></li>
-                        <li><a href="#third-party" class="section-nav-link block pl-4 border-l-2 border-transparent -ml-[2px] hover:text-logo-gray transition-all">Third-Party Services</a></li>
-                        <li><a href="#responsibility" class="section-nav-link block pl-4 border-l-2 border-transparent -ml-[2px] hover:text-logo-gray transition-all">Data Responsibility</a></li>
-                        <li><a href="#updates" class="section-nav-link block pl-4 border-l-2 border-transparent -ml-[2px] hover:text-logo-gray transition-all">Policy Updates</a></li>
+                        <li><a href="#introduction"
+                                class="section-nav-link block pl-4 border-l-2 border-transparent -ml-[2px] hover:text-logo-gray transition-all">Introduction</a>
+                        </li>
+                        <li><a href="#no-collect"
+                                class="section-nav-link block pl-4 border-l-2 border-transparent -ml-[2px] hover:text-logo-gray transition-all">What
+                                We Don't Collect</a></li>
+                        <li><a href="#third-party"
+                                class="section-nav-link block pl-4 border-l-2 border-transparent -ml-[2px] hover:text-logo-gray transition-all">Third-Party
+                                Services</a></li>
+                        <li><a href="#responsibility"
+                                class="section-nav-link block pl-4 border-l-2 border-transparent -ml-[2px] hover:text-logo-gray transition-all">Data
+                                Responsibility</a></li>
+                        <li><a href="#updates"
+                                class="section-nav-link block pl-4 border-l-2 border-transparent -ml-[2px] hover:text-logo-gray transition-all">Policy
+                                Updates</a></li>
                     </ul>
                 </div>
             </aside>
@@ -119,12 +148,15 @@
             <!-- Policy Content -->
             <div class="flex-1 max-w-3xl">
                 <div class="mb-10">
-                    <span class="inline-block px-3 py-1 rounded-full bg-gray-100 text-gray-500 text-xs font-medium mb-4">
+                    <span
+                        class="inline-block px-3 py-1 rounded-full bg-gray-100 text-gray-500 text-xs font-medium mb-4">
                         Last Updated: 4 December 2025
                     </span>
                     <h1 class="text-4xl font-extrabold text-gray-900 mb-6">Privacy Policy</h1>
                     <p class="text-lg text-gray-600 leading-relaxed">
-                        This Privacy Policy explains what information (if any) is collected when you use Insideout.com, and how we handle it given that our website is entirely static and runs without a backend server.
+                        This Privacy Policy explains what information (if any) is collected when you use Insideout.com,
+                        and how we handle it given that our website is entirely static and runs without a backend
+                        server.
                     </p>
                 </div>
 
@@ -139,7 +171,9 @@
                         </div>
                         <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 policy-card">
                             <p class="text-gray-600 leading-relaxed">
-                                Insideout is designed with a "privacy-first" architecture. By operating as a static site, we minimize the data footprint generated during your visit. Most processing happens directly in your browser, keeping your data under your control.
+                                Insideout is designed with a "privacy-first" architecture. By operating as a static
+                                site, we minimize the data footprint generated during your visit. Most processing
+                                happens directly in your browser, keeping your data under your control.
                             </p>
                         </div>
                     </section>
@@ -153,25 +187,31 @@
                             <h2 class="text-2xl font-bold text-gray-900">2. Data We DO NOT Collect</h2>
                         </div>
                         <div class="space-y-4">
-                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 policy-card flex gap-4">
+                            <div
+                                class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 policy-card flex gap-4">
                                 <i data-lucide="user-minus" class="w-6 h-6 text-logo-gray flex-shrink-0 mt-1"></i>
                                 <div>
                                     <h4 class="font-bold text-gray-900 mb-1">No Personal Identifiers</h4>
-                                    <p class="text-gray-600">We do not collect names, email addresses, or any unique identifier as we have no account system.</p>
+                                    <p class="text-gray-600">We do not collect names, email addresses, or any unique
+                                        identifier as we have no account system.</p>
                                 </div>
                             </div>
-                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 policy-card flex gap-4">
+                            <div
+                                class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 policy-card flex gap-4">
                                 <i data-lucide="server-off" class="w-6 h-6 text-logo-gray flex-shrink-0 mt-1"></i>
                                 <div>
                                     <h4 class="font-bold text-gray-900 mb-1">No Server-Side Content Storage</h4>
-                                    <p class="text-gray-600">Data you process in our tools (e.g., text formatting) stays in your browser's memory. It is never sent to our servers.</p>
+                                    <p class="text-gray-600">Data you process in our tools (e.g., text formatting) stays
+                                        in your browser's memory. It is never sent to our servers.</p>
                                 </div>
                             </div>
-                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 policy-card flex gap-4">
+                            <div
+                                class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 policy-card flex gap-4">
                                 <i data-lucide="file-text" class="w-6 h-6 text-logo-gray flex-shrink-0 mt-1"></i>
                                 <div>
                                     <h4 class="font-bold text-gray-900 mb-1">No Server Logs</h4>
-                                    <p class="text-gray-600">Since there is no application server, we do not generate usage logs related to the processing of your data.</p>
+                                    <p class="text-gray-600">Since there is no application server, we do not generate
+                                        usage logs related to the processing of your data.</p>
                                 </div>
                             </div>
                         </div>
@@ -185,23 +225,27 @@
                             </div>
                             <h2 class="text-2xl font-bold text-gray-900">3. Third-Party Services</h2>
                         </div>
-                        <div class="prose prose-gray max-w-none text-gray-600 bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-                            <p class="mb-6">Insideout embeds essential third-party services for advertising and analytics. These partners operate under their own privacy policies.</p>
-                            
+                        <div
+                            class="prose prose-gray max-w-none text-gray-600 bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                            <p class="mb-6">Insideout embeds essential third-party services for advertising and
+                                analytics. These partners operate under their own privacy policies.</p>
+
                             <div class="grid md:grid-cols-2 gap-8">
                                 <div class="space-y-3">
                                     <h4 class="text-gray-900 font-bold flex items-center gap-2">
                                         <i data-lucide="mouse-pointer-2" class="w-4 h-4 text-logo-gray"></i>
                                         Advertising Networks
                                     </h4>
-                                    <p class="text-sm">Partners use cookies to collect non-personal info (IP, browser type) to serve relevant ads. You can manage these in your browser settings.</p>
+                                    <p class="text-sm">Partners use cookies to collect non-personal info (IP, browser
+                                        type) to serve relevant ads. You can manage these in your browser settings.</p>
                                 </div>
                                 <div class="space-y-3">
                                     <h4 class="text-gray-900 font-bold flex items-center gap-2">
                                         <i data-lucide="bar-chart-3" class="w-4 h-4 text-logo-gray"></i>
                                         Traffic Analytics
                                     </h4>
-                                    <p class="text-sm">We use Google Analytics to measure anonymous traffic (pages viewed, device type). This data is aggregated and cannot identify you.</p>
+                                    <p class="text-sm">We use Google Analytics to measure anonymous traffic (pages
+                                        viewed, device type). This data is aggregated and cannot identify you.</p>
                                 </div>
                             </div>
                         </div>
@@ -216,10 +260,12 @@
                             <h2 class="text-2xl font-bold text-gray-900">4. External Responsibility</h2>
                         </div>
                         <div class="bg-gray-900 text-white p-8 rounded-2xl shadow-xl">
-                            <p class="mb-4 opacity-90">When you follow a link from our results or ads to an external website, this policy no longer applies.</p>
+                            <p class="mb-4 opacity-90">When you follow a link from our results or ads to an external
+                                website, this policy no longer applies.</p>
                             <div class="flex items-start gap-4 p-4 bg-white/10 rounded-xl border border-white/10">
                                 <i data-lucide="alert-circle" class="w-6 h-6 text-logo-gray flex-shrink-0"></i>
-                                <p class="text-sm italic">"We urge you to review the privacy policy of any site you visit after leaving Insideout. We are not responsible for their data practices."</p>
+                                <p class="text-sm italic">"We urge you to review the privacy policy of any site you
+                                    visit after leaving Insideout. We are not responsible for their data practices."</p>
                             </div>
                         </div>
                     </section>
@@ -234,7 +280,8 @@
                         </div>
                         <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 policy-card">
                             <p class="text-gray-600">
-                                We reserve the right to update this Privacy Policy. Any changes will be posted on this page with an updated "Effective Date."
+                                We reserve the right to update this Privacy Policy. Any changes will be posted on this
+                                page with an updated "Effective Date."
                             </p>
                         </div>
                     </section>
@@ -249,27 +296,29 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
                 <div class="space-y-4">
                     <h2 class="text-2xl font-bold text-white flex items-center gap-2">
-                        <span class="w-8 h-8 bg-logo-gray rounded-md inline-block"></span>
+
                         Insideout
                     </h2>
                     <p class="text-sm max-w-xs">
-                        Empowering users with privacy-focused web utilities and innovation since 2024.
+                        Empowering users with privacy-focused web utilities and innovation since 2025.
                     </p>
                 </div>
                 <div>
                     <h3 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">Navigation</h3>
                     <ul class="space-y-2 text-sm">
                         <li><a href="index.html" class="hover:text-logo-gray transition-colors">Home Page</a></li>
-                        <li><a href="#" class="hover:text-logo-gray transition-colors">All Tools</a></li>
-                        <li><a href="#" class="hover:text-logo-gray transition-colors">About Us</a></li>
+                        <li><a href="tools.html" class="hover:text-logo-gray transition-colors">All Tools</a></li>
+                        <li><a href="contact.html" class="hover:text-logo-gray transition-colors">Contact Us</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="text-white font-bold mb-4 uppercase text-xs tracking-widest">Legal</h3>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="text-logo-gray font-medium">Privacy Policy</a></li>
-                        <li><a href="#" class="hover:text-logo-gray transition-colors">Terms of Service</a></li>
-                        <li><a href="#" class="hover:text-logo-gray transition-colors">Cookie Policy</a></li>
+                        <li><a href="privacy-policy.html" class="hover:text-logo-gray transition-colors">Privacy
+                                Policy</a></li>
+                        <li><a href="terms-of-service.html" class="hover:text-logo-gray transition-colors">Terms of
+                                Service</a></li>
+
                     </ul>
                 </div>
             </div>
@@ -277,9 +326,12 @@
             <div class="pt-8 border-t border-gray-800 text-center">
                 <p class="text-xs">&copy; 2025 Insideout.bond | A platform of innovation.</p>
                 <div class="mt-4 flex justify-center gap-6">
-                    <i data-lucide="twitter" class="w-4 h-4 cursor-pointer hover:text-white"></i>
-                    <i data-lucide="github" class="w-4 h-4 cursor-pointer hover:text-white"></i>
-                    <i data-lucide="mail" class="w-4 h-4 cursor-pointer hover:text-white"></i>
+                    <a href="https://wa.me/" target="_blank" class="hover:text-white transition-colors">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    </a>
+                    <a href="mailto:insideoutwebservices@gmail.com" class="hover:text-white transition-colors">
+                        <i data-lucide="mail" class="w-4 h-4"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -308,7 +360,7 @@
             entries.forEach(entry => {
                 const id = entry.target.getAttribute('id');
                 const navLink = document.querySelector(`.section-nav-link[href="#${id}"]`);
-                
+
                 if (entry.isIntersecting) {
                     document.querySelectorAll('.section-nav-link').forEach(link => link.classList.remove('active'));
                     navLink?.classList.add('active');
@@ -320,10 +372,14 @@
             observer.observe(section);
         });
 
-        // Simple Mobile Menu (Log to console as placeholder for real logic)
-        document.getElementById('mobile-menu-btn').onclick = () => {
-            console.log('Mobile navigation triggered');
-        };
+        // Simple Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.onclick = () => {
+                mobileMenu.classList.toggle('hidden');
+            };
+        }
     </script>
 </body>
 
