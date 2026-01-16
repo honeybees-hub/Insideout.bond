@@ -32,23 +32,55 @@
 <body class="min-h-screen antialiased">
 
     <!-- Header / Navigation Bar (Simplified and Logo Color Changed) -->
-    <header class="sticky top-0 z-50 bg-primary-bg/95 backdrop-blur-sm shadow-md border-b border-border-light">
+    <header class="fixed top-0 w-full z-50 bg-primary-bg/95 backdrop-blur-sm shadow-md border-b border-border-light">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <!-- Logo: "Insideout" in #9EA3A3 -->
                 <div class="flex-shrink-0" style="color: #9EA3A3">
-                    <a href="https://insideout.bond" class="text-2xl font-bold text-logo-gray">Insideout</a>
+                    <a href="index.html" class="text-2xl font-bold text-logo-gray">Insideout</a>
                 </div>
 
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="p-2 text-[#9EA3A3]">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
 
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html"
+                        class="text-text-dark hover:text-cta-blue transition duration-150 font-medium">Home
+                        </a>
+                    <a href="tools.html"
+                        class="text-blue-600 font-bold transition duration-150 border-b-2 border-blue-600">Tools</a>
+                    <a href="devtools.html"
+                        class="text-text-dark hover:text-cta-blue transition duration-150 font-medium">Dev
+                        Tools</a>
+                    <a href="games.html"
+                        class="text-text-dark hover:text-cta-blue transition duration-150 font-medium">Games </a>
 
+                </nav>
             </div>
         </div>
     </header>
 
 
 
-    <main>
+    <!-- Mobile Menu Container -->
+    <div id="mobile-menu"
+        class="hidden md:hidden bg-white/95 backdrop-blur-sm border-b border-gray-100 fixed top-16 left-0 w-full shadow-lg z-40">
+        <nav class="flex flex-col p-4 space-y-4 text-[#111827]">
+            <a href="index.html" class="text-sm font-medium hover:text-logo-gray transition-colors">Home</a>
+            <a href="tools.html"
+                class="text-sm font-bold text-blue-600 bg-blue-50 rounded-lg px-2 py-1.5 transition-colors">Tools</a>
+            <a href="games.html" class="text-sm font-medium hover:text-logo-gray transition-colors">Games</a>
+            <a href="devtools.html" class="text-sm font-medium hover:text-logo-gray transition-colors">Dev Tools</a>
+            
+        </nav>
+    </div>
+
+    <main class="pt-16">
         <!-- Product Features Section (Icons and Border Colors Updated) -->
         <section id="products" class="py-16 bg-secondary-bg">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -256,34 +288,6 @@
                             </span>
                         </div>
                     </a>
-
-                    <!-- CARD 9: PDF MERGER -->
-                    <a href="Tools/pdf-merger.html"
-                        class="game-card relative group w-full aspect-[16/10] bg-gray-800 rounded-2xl overflow-hidden block shadow-lg hover:shadow-2xl transition-all duration-300">
-                        <img src="Tools/images/pdf-merger.png" alt="PDF Merger Pro"
-                            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10">
-                        </div>
-                        <div class="absolute bottom-0 left-0 right-0 p-5 z-20 flex items-end justify-between">
-                            <div class="flex items-center gap-4">
-                                <div
-                                    class="w-12 h-12 rounded-xl bg-blue-500/20 backdrop-blur-md border border-white/10 flex items-center justify-center shadow-lg">
-                                    <i data-lucide="combine" class="w-6 h-6 text-blue-400"></i>
-                                </div>
-                                <div class="text-white">
-                                    <h3 class="text-lg font-bold leading-tight">PDF Merger</h3>
-                                    <p class="text-xs text-gray-300">Fast & Secure</p>
-                                </div>
-                            </div>
-                            <span
-                                class="bg-white/10 backdrop-blur-md border border-white/20 text-[10px] uppercase tracking-wider font-bold px-3 py-1 rounded-full text-white">
-                                Free
-                            </span>
-                        </div>
-                    </a>
-
-
-
 
                 </div>
             </div>

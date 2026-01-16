@@ -84,17 +84,51 @@
     <!-- NEW CANVAS BACKGROUND -->
     <canvas id="bgCanvas"></canvas>
 
-    <header class="sticky top-0 z-50 bg-primary-bg/80 backdrop-blur-md shadow-md border-b border-border-light">
+    <header class="fixed top-0 w-full z-50 bg-primary-bg/95 backdrop-blur-sm shadow-md border-b border-border-light">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
+                <!-- Logo: "Insideout" in #9EA3A3 -->
                 <div class="flex-shrink-0" style="color: #9EA3A3">
-                    <a href="https://Insideout.bond" class="text-2xl font-bold text-logo-gray">Insideout</a>
+                    <a href="index.html" class="text-2xl font-bold text-logo-gray">Insideout</a>
                 </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="p-2 text-[#9EA3A3]">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html"
+                        class="text-text-dark hover:text-cta-blue transition duration-150 font-medium">Home</a>
+                    <a href="tools.html"
+                        class="text-text-dark hover:text-cta-blue transition duration-150 font-medium">Tools</a>
+                    <a href="devtools.html"
+                        class="text-blue-600 font-bold transition duration-150 border-b-2 border-blue-600">Dev
+                        Tools</a>
+                    <a href="games.html"
+                        class="text-text-dark hover:text-cta-blue transition duration-150 font-medium">Games </a>
+
+                </nav>
             </div>
         </div>
     </header>
 
-    <main>
+    <!-- Mobile Menu Container -->
+    <div id="mobile-menu"
+        class="hidden md:hidden bg-black/95 backdrop-blur-sm border-b border-gray-800 fixed top-16 left-0 w-full shadow-lg z-40">
+        <nav class="flex flex-col p-4 space-y-4 text-gray-200">
+            <a href="index.html" class="text-sm font-medium hover:text-white transition-colors">Home</a>
+            <a href="tools.html" class="text-sm font-medium hover:text-white transition-colors">Tools</a>
+            <a href="games.html" class="text-sm font-medium hover:text-white transition-colors">Games</a>
+            <a href="devtools.html"class="text-sm font-bold text-blue-400 bg-white/10 rounded-lg px-2 py-1.5 transition-colors">Dev Tools</a>
+            
+        </nav>
+    </div>
+
+    <main class="pt-16">
         <section id="products" class="py-16 bg-transparent">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl font-bold text-center mb-12 text-text-dark">Our Comprehensive Dev Tools</h2>
@@ -139,7 +173,7 @@
                         </div>
                     </a>
 
-<!-- Card 3: .gitignore Generator -->
+                    <!-- Card 3: .gitignore Generator -->
                     <a href="Devtools/gitignore.html">
                         <div
                             class="bg-transparent p-6 rounded-xl shadow-lg border border-border-light hover:border-cta-blue transition duration-300 transform hover:scale-[1.02] hover:shadow-xl cursor-pointer h-full relative group">
@@ -196,7 +230,7 @@
                         </div>
                     </a>
 
-                     <!-- Card 6: Wallpaper Downloader -->
+                    <!-- Card 6: Wallpaper Downloader -->
                     <a href="Tools/Wallpaper Downloader.html">
                         <div
                             class="bg-transparent p-6 rounded-xl shadow-lg border border-border-light hover:border-cta-blue transition duration-300 transform hover:scale-[1.02] hover:shadow-xl cursor-pointer h-full relative group">
@@ -407,6 +441,14 @@
 
         // Initialize Lucide icons
         lucide.createIcons();
+
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.onclick = () => {
+                mobileMenu.classList.toggle('hidden');
+            };
+        }
     </script>
 </body>
 

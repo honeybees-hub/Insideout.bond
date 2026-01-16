@@ -14,50 +14,9 @@
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Mobile-only indicator styles (simple white background, black text, with gap) -->
-    <style>
-        .mobile-only {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 16px;
-            background: #ffffff;
-            color: #000000;
-            text-align: center;
-            padding: 10px 14px;
-            font-weight: 600;
-            flex-wrap: wrap;
-        }
-
-        .mobile-only a {
-            color: #000000;
-            text-decoration: none;
-            padding: 6px 8px;
-            font-size: 0.95rem;
-        }
-
-        .mobile-only a:hover {
-            text-decoration: underline
-        }
-
-        @media(min-width:768px) {
-            .mobile-only {
-                display: none
-            }
-        }
-
-        .typewriter-text {
-            color: #057aff;
-            font-weight: bold;
-        }
 
 
-        .cursor {
-            display: inline-block;
-            width: 3px;
-            background-color: #333;
-            animation: blink 0.7s infinite;
-            margin-left: 2px;
-        }
+
     </style>
 </head>
 <!-- Google tag (gtag.js) -->
@@ -73,16 +32,25 @@
 <body class="min-h-screen antialiased">
 
     <!-- Header / Navigation Bar (Simplified and Logo Color Changed) -->
-    <header class="sticky top-0 z-50 bg-primary-bg/95 backdrop-blur-sm shadow-md border-b border-border-light">
+    <header class="fixed top-0 w-full z-50 bg-primary-bg/95 backdrop-blur-sm shadow-md border-b border-border-light">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <!-- Logo: "Insideout" in #9EA3A3 -->
                 <div class="flex-shrink-0" style="color: #9EA3A3">
-                    <a href="#" class="text-2xl font-bold text-logo-gray">Insideout</a>
+                    <a href="index.html" class="text-2xl font-bold text-logo-gray">Insideout</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="p-2 text-[#9EA3A3]">
+                        <i data-lucide="menu"></i>
+                    </button>
                 </div>
 
                 <!-- Desktop Navigation Links -->
                 <nav class="hidden md:flex space-x-8">
+                    <a href="index.html"
+                        class="text-blue-600 font-bold transition duration-150 border-b-2 border-blue-600">Home </a>
                     <a href="tools.html"
                         class="text-text-dark hover:text-cta-blue transition duration-150 font-medium">Tools</a>
                     <a href="devtools.html"
@@ -97,14 +65,20 @@
     </header>
 
     <!-- Mobile-only indicator -->
-    <div id="mobile-indicator" class="mobile-only" role="status" aria-hidden="false">
-        <a href="tools.html" class="text-text-dark hover:text-cta-blue transition duration-150 font-medium">Tools</a>
+    <!-- Mobile Menu Container -->
+    <div id="mobile-menu"
+        class="hidden md:hidden bg-white/95 backdrop-blur-sm border-b border-gray-100 fixed top-16 left-0 w-full shadow-lg z-40">
+        <nav class="flex flex-col p-4 space-y-4 text-[#111827]">
+            <a href="index.html"
+                class="text-sm font-bold text-blue-600 bg-blue-50 rounded-lg px-2 py-1.5 transition-colors">Home</a>
+            <a href="tools.html" class="text-sm font-medium hover:text-logo-gray transition-colors">Tools</a>
+            <a href="games.html" class="text-sm font-medium hover:text-logo-gray transition-colors">Games</a>
+            <a href="devtools.html" class="text-sm font-medium hover:text-logo-gray transition-colors">Dev Tools</a>
 
-        <a href="games.html" class="text-text-dark hover:text-cta-blue transition duration-150 font-medium">Games </a>
-
+        </nav>
     </div>
 
-    <main>
+    <main class="pt-16">
         <!-- Hero Section -->
         <section class="py-16 md:py-24 text-center bg-primary-bg">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -112,7 +86,7 @@
                     The Next Evolution of Digital Tools
                 </h1>
 
-                <h1 style="margin-top: 25px; font-size: 47px; font-weight: bold;">
+                <h1 style="margin-top: 25px; font-size: 47px; font-weight: bold; color: #13ffe7;">
                     <span class="typewriter-text"></span><span class="cursor">&nbsp;</span>
                 </h1>
 
@@ -294,7 +268,7 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                   
+
 
                     <!-- Email Card -->
                     <a href="mailto:insideoutwebservices@gmail.com"
@@ -350,7 +324,7 @@
                 <div class="pt-8 border-t border-gray-800 text-center">
                     <p class="text-xs">&copy; 2025 Insideout.bond | A platform of innovation.</p>
                     <div class="mt-4 flex justify-center gap-6">
-                        
+
                         <a href="mailto:insideoutwebservices@gmail.com" class="hover:text-white transition-colors">
                             <i data-lucide="mail" class="w-4 h-4"></i>
                         </a>
@@ -364,6 +338,14 @@
             window.addEventListener('load', () => {
                 lucide.createIcons();
             });
+
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.onclick = () => {
+                    mobileMenu.classList.toggle('hidden');
+                };
+            }
         </script>
         <script>
 

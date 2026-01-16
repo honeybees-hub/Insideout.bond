@@ -13,6 +13,21 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2280832801216201"
         crossorigin="anonymous"></script>
     <!-- auto ads end  -->
+    <style>
+        .typewriter-text {
+            color: #057aff;
+            font-weight: bold;
+        }
+
+
+        .cursor {
+            display: inline-block;
+            width: 3px;
+            background-color: #333;
+            animation: blink 0.7s infinite;
+            margin-left: 2px;
+        }
+    </style>
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1605V9LS1K"></script>
@@ -27,41 +42,63 @@
 <body class="min-h-screen antialiased">
 
     <!-- Header / Navigation Bar (Simplified and Logo Color Changed) -->
-    <header class="sticky top-0 z-50 bg-primary-bg/95 backdrop-blur-sm shadow-md border-b border-border-light">
+    <header class="fixed top-0 w-full z-50 bg-primary-bg/95 backdrop-blur-sm shadow-md border-b border-border-light">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Mobile Menu Button -->
-            <div class="md:hidden">
-                <button id="mobile-menu-btn" class="p-2 text-[#9EA3A3]">
-                    <i data-lucide="menu"></i>
-                </button>
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo: "Insideout" in #9EA3A3 -->
+                <div class="flex-shrink-0" style="color: #9EA3A3">
+                    <a href="index.html" class="text-2xl font-bold text-logo-gray">Insideout</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="p-2 text-[#9EA3A3]">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html"
+                        class="text-text-dark hover:text-cta-blue transition duration-150 font-medium">Home</a>
+                    <a href="tools.html"
+                        class="text-text-dark hover:text-cta-blue transition duration-150 font-medium">Tools</a>
+                    <a href="devtools.html"
+                        class="text-text-dark hover:text-cta-blue transition duration-150 font-medium">Dev
+                        Tools</a>
+                    <a href="games.html"
+                        class="text-blue-600 font-bold transition duration-150 border-b-2 border-blue-600">Games </a>
+
+                </nav>
             </div>
-        </div>
-        </div>
-        <!-- Mobile Menu Container -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100">
-            <nav class="flex flex-col p-4 space-y-4 text-[#111827]">
-                <a href="index.html" class="text-sm font-medium hover:text-logo-gray transition-colors">Home</a>
-                <a href="tools.html" class="text-sm font-medium hover:text-logo-gray transition-colors">Tools</a>
-                <a href="games.html" class="text-sm font-medium hover:text-logo-gray transition-colors">Games</a>
-                <a href="privacy-policy.html"
-                    class="text-sm font-medium hover:text-logo-gray transition-colors">Privacy</a>
-                <a href="terms-of-service.html"
-                    class="text-sm font-medium hover:text-logo-gray transition-colors">Terms</a>
-                <a href="contact.html" class="text-sm font-medium hover:text-logo-gray transition-colors">Contact</a>
-            </nav>
         </div>
     </header>
 
+    <!-- Mobile Menu Container -->
+    <div id="mobile-menu"
+        class="hidden md:hidden bg-white/95 backdrop-blur-sm border-b border-gray-100 fixed top-16 left-0 w-full shadow-lg z-40">
+        <nav class="flex flex-col p-4 space-y-4 text-[#111827]">
+            <a href="index.html" class="text-sm font-medium hover:text-logo-gray transition-colors">Home</a>
+            <a href="tools.html" class="text-sm font-medium hover:text-logo-gray transition-colors">Tools</a>
+            <a href="games.html"
+                class="text-sm font-bold text-blue-600 bg-blue-50 rounded-lg px-2 py-1.5 transition-colors">Games</a>
+            <a href="devtools.html" class="text-sm font-medium hover:text-logo-gray transition-colors">Dev Tools</a>
+           
+        </nav>
+    </div>
 
 
-    <main>
+
+
+
+    <main class="pt-16">
         <!-- Product Features Section (Icons and Border Colors Updated) -->
         <section id="products" class="py-16 bg-secondary-bg">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl font-bold text-center mb-12 text-text-dark">Our Comprehensive Games</h2>
 
                 <!-- Grid Container -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-6 ">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-8 p-6 ">
 
                     <!-- CARD 1: TIC TAC TOE -->
                     <a href="Games/Tic-Tac-Toe.html"
@@ -188,7 +225,7 @@
                         </div>
                     </a>
 
-                     <!-- CARD 6: CANDY CRUSH -->
+                    <!-- CARD 6: CANDY CRUSH -->
                     <a href="Games/candy-crush.html"
                         class="game-card relative group w-full aspect-[16/10] bg-gray-800 rounded-2xl overflow-hidden block shadow-lg hover:shadow-2xl transition-all duration-300">
                         <img src="Games/images/candy.png" alt="Candy Crush"
@@ -215,9 +252,9 @@
 
                 </div>
 
-             </div>
+            </div>
 
-         </section>
+        </section>
 
     </main>
 
@@ -256,7 +293,7 @@
             <div class="pt-8 border-t border-gray-800 text-center">
                 <p class="text-xs">&copy; 2025 Insideout.bond | A platform of innovation.</p>
                 <div class="mt-4 flex justify-center gap-6">
-                   
+
                     <a href="mailto:insideoutwebservices@gmail.com" class="hover:text-white transition-colors">
                         <i data-lucide="mail" class="w-4 h-4"></i>
                     </a>
