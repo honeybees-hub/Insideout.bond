@@ -1,15 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GST Calculator</title>
-     <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <title>GST Calculator - Insideout.bond</title>
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <meta name="application-name" content="Insideout.bond">
+    <meta name="theme-color" content="#2563eb">
 
-    <meta name="application-name" content="Inbondz">
-     <!-- auto ads  -->
-     <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2280832801216201"
-     crossorigin="anonymous"></script> -->
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Calculate GST (Goods and Services Tax) online for free. Easily add or remove GST from any amount with standard Indian tax rates (5%, 12%, 18%, 28%) and custom rates.">
+    <meta name="keywords"
+        content="gst calculator, online gst calculator india, calculate gst, gst inclusive calculator, gst exclusive calculator, gst rate, Insideout.bond">
+    <link rel="canonical" href="https://insideout.bond/Tools/Gst-calculetor.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://insideout.bond/Tools/Gst-calculetor.html">
+    <meta property="og:title" content="GST Calculator - Insideout.bond">
+    <meta property="og:description"
+        content="Calculate GST (Goods and Services Tax) online for free. Easily add or remove GST from any amount with standard Indian tax rates.">
+    <meta property="og:image" content="https://insideout.bond/Tools/images/logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://insideout.bond/Tools/Gst-calculetor.html">
+    <meta property="twitter:title" content="GST Calculator - Insideout.bond">
+    <meta property="twitter:description"
+        content="Calculate GST (Goods and Services Tax) online for free. Easily add or remove GST from any amount with standard Indian tax rates.">
+    <meta property="twitter:image" content="https://insideout.bond/Tools/images/logo.png">
+
+    <!-- AdSense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2280832801216201"
+        crossorigin="anonymous"></script> -->
     <!-- auto ads end  -->
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -18,15 +43,24 @@
     <style>
         :root {
             /* Dark Theme Variables (Permanent) */
-            --primary-color: #6366f1;     /* Indigo 500 */
-            --primary-hover: #818cf8;     /* Indigo 400 */
-            --bg-gradient-start: #111827; /* Gray 900 */
-            --bg-gradient-end: #0f172a;   /* Slate 900 */
-            --text-main: #f3f4f6;         /* Gray 100 */
-            --text-secondary: #9ca3af;    /* Gray 400 */
-            --card-bg: #1f2937;           /* Gray 800 */
-            --error-color: #f87171;       /* Red 400 */
-            --border-color: #374151;      /* Gray 700 */
+            --primary-color: #6366f1;
+            /* Indigo 500 */
+            --primary-hover: #818cf8;
+            /* Indigo 400 */
+            --bg-gradient-start: #111827;
+            /* Gray 900 */
+            --bg-gradient-end: #0f172a;
+            /* Slate 900 */
+            --text-main: #f3f4f6;
+            /* Gray 100 */
+            --text-secondary: #9ca3af;
+            /* Gray 400 */
+            --card-bg: #1f2937;
+            /* Gray 800 */
+            --error-color: #f87171;
+            /* Red 400 */
+            --border-color: #374151;
+            /* Gray 700 */
             --radio-bg: #111827;
             --radio-border: #374151;
             --result-border: #374151;
@@ -98,7 +132,7 @@
             border-radius: 8px;
             font-size: 1rem;
             font-family: inherit;
-            background-color: var(--bg-gradient-start); 
+            background-color: var(--bg-gradient-start);
             color: var(--text-main);
             transition: border-color 0.2s, box-shadow 0.2s;
             outline: none;
@@ -107,19 +141,30 @@
         input[type="number"]:focus,
         select:focus {
             border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2); 
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
         }
 
         /* Visual Error State */
-        input.input-error, select.input-error {
+        input.input-error,
+        select.input-error {
             border-color: var(--error-color);
             animation: shake 0.3s ease-in-out;
         }
 
         @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-4px); }
-            75% { transform: translateX(4px); }
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-4px);
+            }
+
+            75% {
+                transform: translateX(4px);
+            }
         }
 
         /* Radio Buttons Group */
@@ -219,9 +264,9 @@
         .result-value {
             font-weight: 600;
             color: var(--text-main);
-            text-align: right;          
-            word-break: break-word;     
-            max-width: 60%;             
+            text-align: right;
+            word-break: break-word;
+            max-width: 60%;
         }
 
         /* Footer Note */
@@ -234,8 +279,15 @@
 
         /* Animation */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Responsive Design */
@@ -244,7 +296,7 @@
                 padding: 1.5rem;
                 border-radius: 12px;
             }
-            
+
             h1 {
                 font-size: 1.5rem;
             }
@@ -259,31 +311,45 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1605V9LS1K"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-1605V9LS1K');
+    gtag('config', 'G-1605V9LS1K');
 </script>
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "GST Calculator",
+  "operatingSystem": "Web",
+  "applicationCategory": "FinancialApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Insideout.bond"
+  },
+  "description": "A free online GST calculator to add or remove GST from prices based on standard Indian tax rates."
+}
+</script>
+
 <body>
 
     <div class="calculator-card">
         <div class="header-row">
-            <h1>GST Calculator</h1>
+            <h1>GST Calculator - Insideout.bond</h1>
         </div>
-        
+
         <!-- Input: Amount -->
         <div class="form-group">
             <label for="amount">Amount (₹)</label>
-            <input 
-                type="number" 
-                id="amount" 
-                placeholder="Enter amount" 
-                min="0" 
-                step="0.01" 
-                inputmode="decimal"
-                onkeydown="return !['e', 'E', '-', '+'].includes(event.key)"
-            >
+            <input type="number" id="amount" placeholder="Enter amount" min="0" step="0.01" inputmode="decimal"
+                onkeydown="return !['e', 'E', '-', '+'].includes(event.key)">
             <div id="error-msg" class="error-msg"></div>
         </div>
 
@@ -305,15 +371,8 @@
         <!-- Input: Custom Rate (Hidden by default) -->
         <div class="form-group" id="custom-rate-group" style="display: none;">
             <label for="custom-rate">Custom Rate (%)</label>
-            <input 
-                type="number" 
-                id="custom-rate" 
-                placeholder="Enter rate (e.g. 15)" 
-                min="0" 
-                step="0.01"
-                inputmode="decimal"
-                onkeydown="return !['e', 'E', '-', '+'].includes(event.key)"
-            >
+            <input type="number" id="custom-rate" placeholder="Enter rate (e.g. 15)" min="0" step="0.01"
+                inputmode="decimal" onkeydown="return !['e', 'E', '-', '+'].includes(event.key)">
         </div>
 
         <!-- Input: Mode -->
@@ -353,6 +412,116 @@
         <div class="footer-note">
             Easily switch between adding tax to a base price or extracting tax from a total price.
         </div>
+
+        <!-- Add SEO and FAQ Sections -->
+        <style>
+            .seo-content {
+                margin-top: 3rem;
+                padding-top: 2rem;
+                border-top: 1px solid var(--border-color);
+                max-width: 800px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .seo-content h2 {
+                color: var(--primary-color);
+                margin-bottom: 1rem;
+                font-size: 1.5rem;
+            }
+
+            .seo-content h3 {
+                color: var(--text-main);
+                margin-top: 1.5rem;
+                margin-bottom: 0.5rem;
+                font-size: 1.25rem;
+            }
+
+            .seo-content p,
+            .seo-content li {
+                color: var(--text-secondary);
+                line-height: 1.6;
+                margin-bottom: 1rem;
+            }
+
+            .seo-content ul {
+                margin-left: 1.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .faq-section {
+                margin-top: 2rem;
+            }
+
+            .faq-item {
+                margin-bottom: 1.5rem;
+            }
+
+            .faq-question {
+                font-weight: 600;
+                color: var(--text-main);
+                margin-bottom: 0.25rem;
+            }
+
+            .faq-answer {
+                color: var(--text-secondary);
+            }
+        </style>
+
+        <section class="seo-content">
+            <h2>About GST Calculator</h2>
+            <p>Our Online GST Calculator is designed to help businesses and consumers quickly calculate the Goods and
+                Services Tax (GST) for products and services in India. Whether you need to find the total price
+                inclusive of tax or extract the tax from a total amount, this tool provides instant and accurate
+                results.</p>
+
+            <h3>How to Use the GST Calculator</h3>
+            <ul>
+                <li><strong>Step 1:</strong> Enter the initial amount (base price or total price) in the input field.
+                </li>
+                <li><strong>Step 2:</strong> Select the applicable GST rate from the dropdown menu (e.g., 5%, 12%, 18%,
+                    28%) or enter a custom rate.</li>
+                <li><strong>Step 3:</strong> Choose either "Add GST" for tax-exclusive prices or "Remove GST" for
+                    tax-inclusive prices.</li>
+                <li><strong>Step 4:</strong> Click "Calculate" to see the detailed breakdown of the net amount, GST
+                    amount, and the final total.</li>
+            </ul>
+
+            <div class="faq-section">
+                <h2>Frequently Asked Questions (FAQ)</h2>
+
+                <div class="faq-item">
+                    <p class="faq-question">What is GST?</p>
+                    <p class="faq-answer">GST stands for Goods and Services Tax. It is an indirect tax used in India on
+                        the supply of goods and services. It replaced many previous indirect taxes like VAT, service
+                        tax, and excise duty.</p>
+                </div>
+
+                <div class="faq-item">
+                    <p class="faq-question">How is inclusive GST calculated?</p>
+                    <p class="faq-answer">To remove GST from a total price, the formula used is: Base Amount = Total
+                        Price / (1 + (GST Rate / 100)). The GST amount is then the difference between the Total Price
+                        and the Base Amount.</p>
+                </div>
+
+                <div class="faq-item">
+                    <p class="faq-question">Are there different GST rates?</p>
+                    <p class="faq-answer">Yes, in India, there are four primary GST slabs: 5%, 12%, 18%, and 28%. Some
+                        items are also exempt (0%) or have special rates like 0.25% or 3%.</p>
+                </div>
+
+                <div class="faq-item">
+                    <p class="faq-question">Is this GST calculator free to use?</p>
+                    <p class="faq-answer">Yes, our GST calculator is completely free for everyone to use as many times
+                        as needed.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="footer-note"
+            style="margin-top: 3rem; border-top: 1px solid var(--border-color); padding-top: 1rem;">
+            &copy; 2026 Insideout.bond. All Rights Reserved.
+        </div>
     </div>
 
     <!-- JAVASCRIPT SECTION (Save as script.js) -->
@@ -367,7 +536,7 @@
             const calculateBtn = document.getElementById('calculate-btn');
             const errorMsg = document.getElementById('error-msg');
             const resultsContainer = document.getElementById('results');
-            
+
             // Result Fields
             const labelBase = document.getElementById('label-base');
             const displayRate = document.getElementById('display-rate');
@@ -404,10 +573,10 @@
 
             const calculateGST = () => {
                 clearErrors();
-                
+
                 const amountRaw = parseFloat(amountInput.value);
                 const amount = isNaN(amountRaw) ? 0 : amountRaw;
-                
+
                 // Determine Rate
                 let rate;
                 if (rateSelect.value === 'custom') {
@@ -415,7 +584,7 @@
                 } else {
                     rate = parseFloat(rateSelect.value);
                 }
-                
+
                 // Get selected mode
                 let mode = 'add';
                 for (const radio of modeRadios) {
@@ -439,8 +608,8 @@
                 // 2. Validation: Custom Rate
                 if (rateSelect.value === 'custom' && (isNaN(rate) || rate < 0 || customRateInput.value === '')) {
                     if (customRateInput.value !== '') {
-                         errorMsg.textContent = 'Please enter a valid tax rate.';
-                         customRateInput.classList.add('input-error');
+                        errorMsg.textContent = 'Please enter a valid tax rate.';
+                        customRateInput.classList.add('input-error');
                     }
                     resultsContainer.classList.remove('active');
                     return;
@@ -456,10 +625,10 @@
                     // Logic: Add GST
                     // Formula: GST = (Amount * Rate) / 100
                     netAmount = amount; // Base is exact
-                    
+
                     // Calculate exact GST then round to 2 decimals
                     gstAmount = roundMoney((amount * rate) / 100);
-                    
+
                     // Total is strictly Base + Rounded GST
                     totalAmount = netAmount + gstAmount;
 
@@ -467,13 +636,13 @@
                 } else {
                     // Logic: Remove GST (Inclusive)
                     totalAmount = amount; // Total is exact
-                    
+
                     // Standard Formula: GST = (Total * Rate) / (100 + Rate)
                     const rawGst = (amount * rate) / (100 + rate);
-                    
+
                     // Round GST first
                     gstAmount = roundMoney(rawGst);
-                    
+
                     // Base is strictly Total - Rounded GST
                     netAmount = totalAmount - gstAmount;
 
@@ -491,13 +660,13 @@
             };
 
             // Event Listeners
-            
+
             // 1. Button Click
             calculateBtn.addEventListener('click', calculateGST);
 
             // 2. Live Calculation (Input changes)
             amountInput.addEventListener('input', calculateGST);
-            
+
             // Handle Rate Changes
             rateSelect.addEventListener('change', () => {
                 if (rateSelect.value === 'custom') {
@@ -506,14 +675,14 @@
                 } else {
                     customRateGroup.style.display = 'none';
                     // Clear error if switching away from invalid custom rate
-                    customRateInput.classList.remove('input-error'); 
-                    if(errorMsg.textContent.includes('valid tax rate')) errorMsg.textContent = '';
+                    customRateInput.classList.remove('input-error');
+                    if (errorMsg.textContent.includes('valid tax rate')) errorMsg.textContent = '';
                 }
                 calculateGST();
             });
 
             customRateInput.addEventListener('input', calculateGST);
-            
+
             // 3. Radio Button Changes
             modeRadios.forEach(radio => {
                 radio.addEventListener('change', calculateGST);
@@ -521,4 +690,5 @@
         });
     </script>
 </body>
+
 </html>
